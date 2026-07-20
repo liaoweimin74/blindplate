@@ -15,7 +15,7 @@
         <el-table-column prop="status" label="状态" />
         <el-table-column label="操作" width="200">
           <template #default="{ row }">
-            <el-button size="small" @click="showEditDialog(row)">编辑</el-button>
+            <el-button size="small">编辑</el-button>
             <el-button size="small" type="danger" @click="handleDelete(row.id)">删除</el-button>
           </template>
         </el-table-column>
@@ -45,10 +45,6 @@ async function fetchData() {
 
 function showCreateDialog() {
   // TODO: 实现创建对话框
-}
-
-function showEditDialog(row: BlindPlate) {
-  // TODO: 实现编辑对话框
 }
 
 async function handleDelete(id: number) {

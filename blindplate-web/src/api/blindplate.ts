@@ -1,5 +1,5 @@
 import request from './request'
-import type { BlindPlate, Page } from '@/types'
+import type { BlindPlate } from '@/types'
 
 export function getBlindPlates() {
   return request.get('/blindplates')
