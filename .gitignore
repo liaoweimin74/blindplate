@@ -1,5 +1,23 @@
 # ↑ Manual gitignore entries go ABOVE this line (outside auto-generated block) ↑
 
+# Maven
+target/
+*.class
+*.jar
+*.war
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS
+.DS_Store
+Thumbs.db
+
 # <!-- openspec-superpowers-opencode_gitignore -->
 
 # Worktree isolation
