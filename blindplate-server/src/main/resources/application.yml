@@ -3,7 +3,7 @@ server:
 
 spring:
   profiles:
-    active: mysql
+    active: postgres
 
 jwt:
   secret: YmluZ3BsYXRlLW1hbmctYmFuLXN5c3RlbS1zZWNyZXQta2V5LTIwMjQ=
