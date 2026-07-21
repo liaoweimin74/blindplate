@@ -1,22 +1,12 @@
 <template>
-  <div class="app-container">
-    <AppHeader v-if="showHeader" />
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-import AppHeader from '@/components/AppHeader.vue'
-
-const route = useRoute()
-const showHeader = computed(() => route.name !== 'Login')
+// App.vue now only renders router-view
+// Layout is handled by AppLayout component in nested routes
 </script>
 
 <style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
+/* Global styles are imported in main.ts */
 </style>

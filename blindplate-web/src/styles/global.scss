@@ -1,0 +1,253 @@
+/**
+ * 全局基础样式
+ * 
+ * 设置全局字体、滚动条样式、body 背景色等。
+ */
+
+/* ========== 全局重置 ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== HTML & Body ========== */
+html {
+  font-size: var(--brand-font-size-base);
+  line-height: var(--brand-line-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--brand-font-family);
+  font-size: var(--brand-font-size-base);
+  line-height: var(--brand-line-height);
+  color: var(--brand-text-primary);
+  background-color: var(--brand-bg-page);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ========== 滚动条样式 ========== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--brand-bg-page);
+  border-radius: var(--brand-radius-sm);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-border);
+  border-radius: var(--brand-radius-sm);
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-text-disabled);
+}
+
+/* ========== 文字选中样式 ========== */
+::selection {
+  background-color: var(--brand-color-primary);
+  color: var(--brand-bg-white);
+}
+
+/* ========== 链接样式 ========== */
+a {
+  color: var(--brand-color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--brand-color-primary-light);
+}
+
+a:active {
+  color: var(--brand-color-primary-dark);
+}
+
+/* ========== 图片 ========== */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* ========== 按钮重置 ========== */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* ========== 输入框重置 ========== */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+/* ========== 列表重置 ========== */
+ul,
+ol {
+  list-style: none;
+}
+
+/* ========== 禁用状态 ========== */
+[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ========== 模态框遮罩 ========== */
+.el-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ========== 卡片样式增强 ========== */
+.el-card {
+  border-radius: var(--brand-radius-lg);
+  box-shadow: var(--brand-shadow-sm);
+  border: 1px solid var(--brand-border-light);
+}
+
+/* ========== 表格样式增强 ========== */
+.el-table {
+  --el-table-border-color: var(--brand-border-light);
+  --el-table-header-bg-color: var(--brand-bg-page);
+  --el-table-row-hover-bg-color: var(--brand-bg-hover);
+}
+
+.el-table th.el-table__cell {
+  font-weight: var(--brand-font-weight-medium);
+  color: var(--brand-text-primary);
+}
+
+.el-table td.el-table__cell {
+  color: var(--brand-text-secondary);
+}
+
+/* ========== 表格操作按钮 ========== */
+.el-table .el-button + .el-button {
+  margin-left: 8px;
+}
+
+/* ========== 状态标签颜色 ========== */
+.el-tag--success.el-tag--light {
+  background-color: var(--brand-color-success-light);
+  border-color: var(--brand-color-success-light);
+  color: var(--brand-color-success);
+}
+
+.el-tag--warning.el-tag--light {
+  background-color: var(--brand-color-warning-light);
+  border-color: var(--brand-color-warning-light);
+  color: var(--brand-color-warning);
+}
+
+.el-tag--danger.el-tag--light {
+  background-color: var(--brand-color-danger-light);
+  border-color: var(--brand-color-danger-light);
+  color: var(--brand-color-danger);
+}
+
+.el-tag--info.el-tag--light {
+  background-color: var(--brand-color-info-light);
+  border-color: var(--brand-color-info-light);
+  color: var(--brand-color-info);
+}
+
+/* ========== 输入框增强 ========== */
+.el-input__wrapper {
+  border-radius: var(--brand-radius-md);
+}
+
+.el-input__wrapper:hover {
+  box-shadow: 0 0 0 1px var(--brand-color-primary-light);
+}
+
+.el-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px var(--brand-color-primary);
+}
+
+/* ========== 按钮增强 ========== */
+.el-button {
+  border-radius: var(--brand-radius-md);
+  font-weight: var(--brand-font-weight-medium);
+}
+
+.el-button--primary {
+  background-color: var(--brand-color-primary);
+  border-color: var(--brand-color-primary);
+}
+
+.el-button--primary:hover {
+  background-color: var(--brand-color-primary-light);
+  border-color: var(--brand-color-primary-light);
+}
+
+/* ========== 分页增强 ========== */
+.el-pagination {
+  --el-pagination-button-bg-color: var(--brand-bg-white);
+  --el-pagination-hover-color: var(--brand-color-primary);
+}
+
+/* ========== 空状态 ========== */
+.el-empty {
+  padding: var(--brand-spacing-8) 0;
+}
+
+/* ========== 标题层级 ========== */
+h1, .text-4xl {
+  font-size: var(--brand-font-size-4xl);
+  font-weight: var(--brand-font-weight-bold);
+  line-height: 1.2;
+}
+
+h2, .text-3xl {
+  font-size: var(--brand-font-size-3xl);
+  font-weight: var(--brand-font-weight-semibold);
+  line-height: 1.25;
+}
+
+h3, .text-2xl {
+  font-size: var(--brand-font-size-2xl);
+  font-weight: var(--brand-font-weight-semibold);
+  line-height: 1.3;
+}
+
+h4, .text-xl {
+  font-size: var(--brand-font-size-xl);
+  font-weight: var(--brand-font-weight-medium);
+  line-height: 1.35;
+}
+
+h5, .text-lg {
+  font-size: var(--brand-font-size-lg);
+  font-weight: var(--brand-font-weight-medium);
+}
+
+h6, .text-base {
+  font-size: var(--brand-font-size-base);
+  font-weight: var(--brand-font-weight-normal);
+}
+
+.text-sm {
+  font-size: var(--brand-font-size-sm);
+}
+
+.text-xs {
+  font-size: var(--brand-font-size-xs);
+}

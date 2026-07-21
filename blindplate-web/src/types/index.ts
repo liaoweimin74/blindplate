@@ -17,6 +17,8 @@ export interface User {
   username: string
   name: string
   phone: string
+  email?: string
+  role?: string
   status: number
 }
 
@@ -38,8 +40,10 @@ export interface Location {
   id: number
   parentId: number | null
   name: string
+  code: string
   description: string
   type: string
+  parentName?: string
   children?: Location[]
 }
 

@@ -1,37 +1,100 @@
 <template>
-  <div class="blindplate-list">
-    <el-card>
+  <div class="page-container">
+    <div class="page-header">
+      <h1 class="page-title">Blind Plates</h1>
+      <p class="page-subtitle">Manage blind plate inventory</p>
+    </div>
+
+    <el-card class="content-card">
       <template #header>
         <div class="card-header">
-          <span>盲板列表</span>
-          <el-button type="primary" @click="showCreateDialog">新增盲板</el-button>
+          <div class="header-left">
+            <el-input
+              v-model="searchQuery"
+              placeholder="Search by code or name"
+              clearable
+              class="search-input"
+            >
+              <template #prefix>
+                <el-icon><Search /></el-icon>
+              </template>
+            </el-input>
+          </div>
+          <div class="header-right">
+            <el-button type="primary" @click="showCreateDialog">
+              <el-icon><Plus /></el-icon>
+              Add Blind Plate
+            </el-button>
+          </div>
         </div>
       </template>
-      <el-table :data="blindPlates" v-loading="loading">
-        <el-table-column prop="code" label="编号" width="120" />
-        <el-table-column prop="name" label="名称" />
-        <el-table-column prop="spec" label="规格" />
-        <el-table-column prop="material" label="材质" />
-        <el-table-column prop="status" label="状态" />
-        <el-table-column label="操作" width="200">
+
+      <el-table :data="filteredBlindPlates" v-loading="loading" class="data-table">
+        <el-table-column prop="code" label="Code" width="120" />
+        <el-table-column prop="name" label="Name" min-width="150" />
+        <el-table-column prop="spec" label="Specification" width="150" />
+        <el-table-column prop="material" label="Material" width="120" />
+        <el-table-column prop="status" label="Status" width="120">
           <template #default="{ row }">
-            <el-button size="small">编辑</el-button>
-            <el-button size="small" type="danger" @click="handleDelete(row.id)">删除</el-button>
+            <el-tag :type="getStatusType(row.status)" effect="light">
+              {{ row.status }}
+            </el-tag>
+          </template>
+        </el-table-column>
+        <el-table-column label="Actions" width="180" fixed="right">
+          <template #default="{ row }">
+            <el-button size="small" text type="primary" @click="showEditDialog(row)">
+              <el-icon><Edit /></el-icon>
+              Edit
+            </el-button>
+            <el-button size="small" text type="danger" @click="handleDelete(row.id)">
+              <el-icon><Delete /></el-icon>
+              Delete
+            </el-button>
           </template>
         </el-table-column>
       </el-table>
     </el-card>
+
+    <BlindPlateForm
+      v-model:visible="dialogVisible"
+      :data="editData"
+      @submit="handleFormSubmit"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
+import { Search, Plus, Edit, Delete } from '@element-plus/icons-vue'
 import { getBlindPlates, deleteBlindPlate } from '@/api/blindplate'
 import type { BlindPlate } from '@/types'
+import BlindPlateForm from '@/components/BlindPlateForm.vue'
 
 const blindPlates = ref<BlindPlate[]>([])
 const loading = ref(false)
+const searchQuery = ref('')
+const dialogVisible = ref(false)
+const editData = ref<BlindPlate | null>(null)
+
+const filteredBlindPlates = computed(() => {
+  if (!searchQuery.value) return blindPlates.value
+  const query = searchQuery.value.toLowerCase()
+  return blindPlates.value.filter(bp =>
+    bp.code.toLowerCase().includes(query) ||
+    bp.name.toLowerCase().includes(query)
+  )
+})
+
+function getStatusType(status: string) {
+  switch (status) {
+    case 'installed': return 'success'
+    case 'removed': return 'warning'
+    case 'maintenance': return 'info'
+    default: return ''
+  }
+}
 
 async function fetchData() {
   loading.value = true
@@ -44,18 +107,83 @@ async function fetchData() {
 }
 
 function showCreateDialog() {
-  // TODO: 实现创建对话框
+  editData.value = null
+  dialogVisible.value = true
+}
+
+function showEditDialog(row: BlindPlate) {
+  editData.value = { ...row }
+  dialogVisible.value = true
+}
+
+async function handleFormSubmit(_data: any) {
+  // TODO: Implement save logic
+  ElMessage.success(editData.value ? 'Updated successfully' : 'Created successfully')
+  fetchData()
 }
 
 async function handleDelete(id: number) {
-  await ElMessageBox.confirm('确定删除该盲板？', '提示', { type: 'warning' })
+  await ElMessageBox.confirm('Are you sure you want to delete this blind plate?', 'Confirm Delete', { type: 'warning' })
   await deleteBlindPlate(id)
-  ElMessage.success('删除成功')
+  ElMessage.success('Deleted successfully')
   fetchData()
 }
 
 onMounted(fetchData)
 </script>
+
+<style scoped>
+.page-container {
+  padding: var(--brand-spacing-6);
+}
+.page-header {
+  margin-bottom: var(--brand-spacing-6);
+}
+.page-title {
+  font-size: var(--brand-font-size-2xl);
+  font-weight: var(--brand-font-weight-semibold);
+  color: var(--brand-text-primary);
+  margin: 0 0 var(--brand-spacing-2) 0;
+}
+.page-subtitle {
+  font-size: var(--brand-font-size-base);
+  color: var(--brand-text-secondary);
+  margin: 0;
+}
+.content-card {
+  background: var(--brand-bg-white);
+  border-radius: var(--brand-radius-lg);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--brand-spacing-4);
+}
+.header-left {
+  display: flex;
+  gap: var(--brand-spacing-3);
+}
+.header-right {
+  display: flex;
+  gap: var(--brand-spacing-3);
+}
+.search-input {
+  width: 280px;
+}
+.data-table {
+  width: 100%;
+}
+:deep(.el-table__header th) {
+  background-color: var(--brand-bg-page);
+  color: var(--brand-text-primary);
+  font-weight: var(--brand-font-weight-medium);
+}
+:deep(.el-table__row:hover td) {
+  background-color: var(--brand-bg-hover);
+}
+</style>
 
 <style scoped>
 .card-header {
