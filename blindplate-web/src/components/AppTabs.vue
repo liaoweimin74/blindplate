@@ -65,31 +65,21 @@ function isClosable(key: string): boolean {
 </template>
 
 <style scoped>
-.app-tabs {
+/* .app-tabs {
   background-color: var(--brand-bg-white);
   border-bottom: 1px solid var(--brand-border-light);
   height: var(--brand-tabs-height);
   display: flex;
   align-items: flex-end;
   padding: 0 var(--brand-spacing-4);
-}
+} */
 .tabs-container {
   width: 100%;
-}
-:deep(.el-tabs__header) {
-  margin: 0;
-  border-bottom: none;
-}
-:deep(.el-tabs__nav) {
-  border: none;
-}
-:deep(.el-tabs__nav-wrap::after) {
-  display: none;
 }
 :deep(.el-tabs__item) {
   height: 36px;
   line-height: 36px;
-  border: 1px solid var(--brand-border-light);
+  border: 1x solid var(--brand-border-light);
   border-radius: var(--brand-radius-md) var(--brand-radius-md) 0 0;
   margin-right: var(--brand-spacing-1);
   background-color: var(--brand-bg-page);
