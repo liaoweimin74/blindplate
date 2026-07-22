@@ -1,4 +1,5 @@
 ﻿export * from './blindplate'
+export * from './blindboard'
 export * from './location'
 export * from './operation'
 export * from './inspection'

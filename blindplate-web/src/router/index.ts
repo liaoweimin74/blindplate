@@ -53,7 +53,20 @@ const routes: RouteRecordRaw[] = [
         path: 'settings',
         name: 'Settings',
         component: () => import('@/views/system/Settings.vue'),
+<<<<<<< HEAD
         meta: { requiresAuth: true, titleKey: 'menu.settings', closable: true }
+      },
+      {
+        path: 'blindplate-editor',
+        name: 'BlindBoardEditor',
+        component: () => import('@/views/blindboard/BlindBoardEditor.vue'),
+        meta: { requiresAuth: true, titleKey: 'menu.blindplateEditor', closable: true }
+      },
+      {
+        path: 'blindplate-preview/:id',
+        name: 'BlindBoardPreview',
+        component: () => import('@/views/blindboard/BlindBoardPreview.vue'),
+        meta: { requiresAuth: true, titleKey: 'menu.blindplatePreview', closable: true }
       }
     ]
   }
