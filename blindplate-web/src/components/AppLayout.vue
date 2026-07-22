@@ -1,5 +1,5 @@
 ﻿<script setup lang="ts">
-import { ref, computed, onMounted, provide } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import AppHeader from './AppHeader.vue'
 import AppSidebar from './AppSidebar.vue'
@@ -8,7 +8,7 @@ import { useTabs } from '@/composables/useTabs'
 
 const router = useRouter()
 const route = useRoute()
-const { addTabFromRoute } = useTabs()
+const { tabs, addTabFromRoute } = useTabs()
 
 const sidebarVisible = ref(true)
 const SIDEBAR_WIDTH = 220
@@ -19,7 +19,8 @@ function toggleSidebar() {
 
 const sidebarWidth = computed(() => sidebarVisible.value ? SIDEBAR_WIDTH : 0)
 
-provide('tabsManager', useTabs)
+/** keep-alive 缓存列表，关闭标签页时自动移除缓存 */
+const cachedTabs = computed(() => tabs.value.map(t => t.key))
 
 onMounted(() => {
   if (route.path !== '/login') {
@@ -45,7 +46,7 @@ router.afterEach((to) => {
         <AppTabs />
         <el-main class="layout-content">
           <router-view v-slot="{ Component }">
-            <keep-alive>
+            <keep-alive :include="cachedTabs">
               <component :is="Component" :key="route.path" />
             </keep-alive>
           </router-view>

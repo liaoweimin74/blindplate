@@ -17,43 +17,43 @@ const routes: RouteRecordRaw[] = [
         path: 'dashboard',
         name: 'Dashboard',
         component: () => import('@/views/report/Dashboard.vue'),
-        meta: { requiresAuth: true, title: 'Dashboard', closable: true }
+        meta: { requiresAuth: true, titleKey: 'menu.dashboard', closable: true }
       },
       {
         path: 'blindplates',
         name: 'BlindPlateList',
         component: () => import('@/views/blindplate/BlindPlateList.vue'),
-        meta: { requiresAuth: true, title: 'Blind Plates', closable: true }
+        meta: { requiresAuth: true, titleKey: 'menu.blindplates', closable: true }
       },
       {
         path: 'locations',
         name: 'LocationTree',
         component: () => import('@/views/location/LocationTree.vue'),
-        meta: { requiresAuth: true, title: 'Locations', closable: true }
+        meta: { requiresAuth: true, titleKey: 'menu.locations', closable: true }
       },
       {
         path: 'operations',
         name: 'OperationList',
         component: () => import('@/views/operation/OperationList.vue'),
-        meta: { requiresAuth: true, title: 'Operations', closable: true }
+        meta: { requiresAuth: true, titleKey: 'menu.operations', closable: true }
       },
       {
         path: 'inspections',
         name: 'InspectionList',
         component: () => import('@/views/inspection/InspectionList.vue'),
-        meta: { requiresAuth: true, title: 'Inspections', closable: true }
+        meta: { requiresAuth: true, titleKey: 'menu.inspections', closable: true }
       },
       {
         path: 'users',
         name: 'UserList',
         component: () => import('@/views/system/UserList.vue'),
-        meta: { requiresAuth: true, title: 'Users', closable: true }
+        meta: { requiresAuth: true, titleKey: 'menu.users', closable: true }
       },
       {
         path: 'settings',
         name: 'Settings',
         component: () => import('@/views/system/Settings.vue'),
-        meta: { requiresAuth: true, title: 'Settings', closable: true }
+        meta: { requiresAuth: true, titleKey: 'menu.settings', closable: true }
       }
     ]
   }
