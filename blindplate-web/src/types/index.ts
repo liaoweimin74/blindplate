@@ -147,3 +147,40 @@ export interface OperationOrder {
   remark: string
   createdAt: string
 }
+}
+
+export interface BlindSpotStatus {
+  locationId: number
+  locationName: string
+  locationType: string
+  parentPath: string
+  currentStatus: string
+  currentBlindPlateId: number | null
+  currentBlindPlateCode: string
+  currentBlindPlateModel: string
+  removable: boolean
+  relatedOperationOrderId: number | null
+  relatedOrderNo: string
+  lastOperationTime: string
+  statusDurationHours: number | null
+  abnormal: boolean
+  abnormalDescription: string
+}
+
+export interface StatusHistoryItem {
+  operationOrderId: number
+  orderNo: string
+  operationType: string
+  blindPlateId: number | null
+  blindPlateCode: string
+  blindPlateModel: string
+  operationTime: string
+  resultingStatus: string
+  operator: string
+}
+
+export interface BlindSpotStatusFilter {
+  locationId?: number
+  status?: string
+  abnormalOnly?: boolean
+}

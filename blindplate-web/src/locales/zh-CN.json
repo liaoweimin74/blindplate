@@ -10,6 +10,7 @@
     "blindplateEditor": "盲板组态",
     "blindplatePreview": "盲板预览",
     "locations": "位置管理",
+    "blindSpotStatus": "通盲状态台账",
     "operations": "操作记录",
     "inspections": "巡检记录",
     "users": "用户管理",
@@ -45,6 +46,8 @@
     "isolationPointImportSubtitle": "批量导入隔离点数据",
     "changeApproval": "变更审批",
     "changeApprovalSubtitle": "审批位置变更记录",
+    "blindSpotStatus": "点位通盲状态台账",
+    "blindSpotStatusSubtitle": "全厂隔离点通盲状态实时总览",
     "operations": "操作记录",
     "operationsSubtitle": "工单管理",
     "inspections": "巡检记录",
@@ -330,6 +333,31 @@
   },
   "status": {
     "active": "启用",
-    "disabled": "禁用"
+    "disabled": "禁用",
+    "pass": "通",
+    "blind": "盲",
+    "removed": "盲板已拆除",
+    "unknown": "未知"
+  },
+  "blindSpotStatus": {
+    "location": "隔离点",
+    "locationPath": "位置路径",
+    "currentStatus": "当前状态",
+    "currentBlindPlate": "当前盲板",
+    "relatedOrder": "关联作业票",
+    "lastOperationTime": "最近操作时间",
+    "duration": "持续时长",
+    "abnormal": "异常",
+    "operation": "操作",
+    "viewHistory": "查看历史",
+    "filterDeviceArea": "装置/区域",
+    "filterStatus": "状态",
+    "filterAbnormalOnly": "仅看异常",
+    "refresh": "刷新",
+    "historyTitle": "状态变更历史",
+    "noHistory": "暂无操作记录",
+    "install": "安装",
+    "remove": "拆除",
+    "inspect": "检验"
   }
 }

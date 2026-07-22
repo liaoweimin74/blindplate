@@ -10,6 +10,7 @@
     "blindplateEditor": "Blind Board Editor",
     "blindplatePreview": "Blind Board Preview",
     "locations": "Locations",
+    "blindSpotStatus": "Blind Spot Status",
     "operations": "Operations",
     "inspections": "Inspections",
     "users": "Users",
@@ -45,6 +46,8 @@
     "isolationPointImportSubtitle": "Batch import isolation point data",
     "changeApproval": "Change Approval",
     "changeApprovalSubtitle": "Approve location change records",
+    "blindSpotStatus": "Blind Spot Status Ledger",
+    "blindSpotStatusSubtitle": "Real-time pass/blind status overview",
     "operations": "Operations",
     "operationsSubtitle": "Work order management",
     "inspections": "Inspections",
@@ -330,6 +333,31 @@
   },
   "status": {
     "active": "Active",
-    "disabled": "Disabled"
+    "disabled": "Disabled",
+    "pass": "Pass",
+    "blind": "Blind",
+    "removed": "Plate Removed",
+    "unknown": "Unknown"
+  },
+  "blindSpotStatus": {
+    "location": "Isolation Point",
+    "locationPath": "Location Path",
+    "currentStatus": "Current Status",
+    "currentBlindPlate": "Current Blind Plate",
+    "relatedOrder": "Related Order",
+    "lastOperationTime": "Last Operation Time",
+    "duration": "Duration",
+    "abnormal": "Abnormal",
+    "operation": "Action",
+    "viewHistory": "View History",
+    "filterDeviceArea": "Device/Area",
+    "filterStatus": "Status",
+    "filterAbnormalOnly": "Abnormal Only",
+    "refresh": "Refresh",
+    "historyTitle": "Status Change History",
+    "noHistory": "No operation records",
+    "install": "Install",
+    "remove": "Remove",
+    "inspect": "Inspect"
   }
 }

@@ -13,7 +13,8 @@ import {
   Edit,
   Box,
   Upload,
-  Stamp
+  Stamp,
+  View
 } from '@element-plus/icons-vue'
 
 const { t } = useI18n()
@@ -28,6 +29,7 @@ const menuItems = [
   { key: '/locations', title: 'menu.locations', icon: Location, path: '/locations' },
   { key: '/isolation-point-import', title: 'menu.isolationPointImport', icon: Upload, path: '/isolation-point-import' },
   { key: '/change-approval', title: 'menu.changeApproval', icon: Stamp, path: '/change-approval' },
+  { key: '/blind-spot-status', title: 'menu.blindSpotStatus', icon: View, path: '/blind-spot-status' },
   { key: '/operations', title: 'menu.operations', icon: List, path: '/operations' },
   { key: '/inspections', title: 'menu.inspections', icon: DataAnalysis, path: '/inspections' },
   { key: '/users', title: 'menu.users', icon: User, path: '/users' },
