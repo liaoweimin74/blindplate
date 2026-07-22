@@ -46,7 +46,6 @@ function isClosable(key: string): boolean {
         :key="tab.key"
         :label="tab.title"
         :name="tab.key"
-        :closable="isClosable(tab.key)"
       >
         <template #label>
           <span class="tab-label">
