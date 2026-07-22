@@ -6,10 +6,12 @@ import { useAuthStore } from '@/stores/auth'
 import { Bell, User, QuestionFilled, InfoFilled, SwitchButton, EditPen, Fold, Expand } from '@element-plus/icons-vue'
 import { ElMessageBox, ElMessage } from 'element-plus'
 import { setLocale } from '@/i18n'
+import { useTabs } from '@/composables/useTabs'
 
 const { t, locale } = useI18n()
 const router = useRouter()
 const authStore = useAuthStore()
+const { refreshTabTitles } = useTabs()
 
 defineProps<{
   sidebarVisible: boolean
@@ -33,9 +35,11 @@ function handleUserCommand(command: string) {
       break
     case 'language-zh':
       setLocale('zh-CN')
+      refreshTabTitles()
       break
     case 'language-en':
       setLocale('en')
+      refreshTabTitles()
       break
     case 'logout':
       handleLogout()
