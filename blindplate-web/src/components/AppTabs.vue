@@ -83,6 +83,9 @@ function isClosable(key: string): boolean {
 :deep(.el-tabs__nav) {
   border: none;
 }
+:deep(.el-tabs__nav-wrap::after) {
+  display: none;
+}
 :deep(.el-tabs__item) {
   height: 36px;
   line-height: 36px;
