@@ -53,8 +53,7 @@ const routes: RouteRecordRaw[] = [
         path: 'settings',
         name: 'Settings',
         component: () => import('@/views/system/Settings.vue'),
-<<<<<<< HEAD
-        meta: { requiresAuth: true, titleKey: 'menu.settings', closable: true }
+meta: { requiresAuth: true, titleKey: 'menu.settings', closable: true }
       },
       {
         path: 'blindplate-editor',

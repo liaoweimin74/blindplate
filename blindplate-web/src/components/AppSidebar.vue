@@ -18,10 +18,9 @@ const router = useRouter()
 const route = useRoute()
 
 const menuItems = [
-<<<<<<< HEAD
-  { key: '/dashboard', title: 'menu.dashboard', icon: HomeFilled, path: '/dashboard' },
+{ key: '/dashboard', title: 'menu.dashboard', icon: HomeFilled, path: '/dashboard' },
   { key: '/blindplates', title: 'menu.blindplates', icon: Document, path: '/blindplates' },
-  { key: '/blindplate-editor', title: '盲板组态', icon: Edit, path: '/blindplate-editor' },
+  { key: '/blindplate-editor', title: 'menu.blindplateEditor', icon: Edit, path: '/blindplate-editor' },
   { key: '/locations', title: 'menu.locations', icon: Location, path: '/locations' },
   { key: '/operations', title: 'menu.operations', icon: List, path: '/operations' },
   { key: '/inspections', title: 'menu.inspections', icon: DataAnalysis, path: '/inspections' },
