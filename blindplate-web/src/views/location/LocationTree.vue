@@ -13,7 +13,7 @@
               <span class="card-title">{{ $t('menu.locations') }}</span>
               <el-button type="primary" size="small" @click="showCreateDialog">
                 <el-icon><Plus /></el-icon>
-                Add
+                {{ $t('button.add') }}
               </el-button>
             </div>
           </template>
@@ -75,12 +75,15 @@
 
 <script setup lang="ts">
 import { ref, watch, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import { Plus, Search, Edit } from '@element-plus/icons-vue'
 import type { Location } from '@/types'
 import type { ElTree } from 'element-plus'
 import LocationForm from '@/components/LocationForm.vue'
+
+const { t } = useI18n()
 
 const treeData = ref<Location[]>([])
 const loading = ref(false)
@@ -125,7 +128,7 @@ function showEditDialog() {
 
 async function handleFormSubmit(_data: any) {
   // TODO: Implement save logic
-  ElMessage.success(editData.value ? 'Updated successfully' : 'Created successfully')
+  ElMessage.success(editData.value ? t('message.updated') : t('message.created'))
   fetchData()
 }
 

@@ -193,8 +193,11 @@ onMounted(fetchStats)
   gap: var(--brand-spacing-3);
 }
 .action-btn {
+  width: 100%;
   justify-content: flex-start;
   height: 48px;
   font-size: var(--brand-font-size-base);
+  padding: 0 var(--brand-spacing-4);
+  margin-left: 0;
 }
 </style>

@@ -106,14 +106,14 @@ function showEditDialog(row: BlindPlate) {
 
 async function handleFormSubmit(_data: any) {
   // TODO: Implement save logic
-  ElMessage.success(editData.value ? 'Updated successfully' : 'Created successfully')
+  ElMessage.success(editData.value ? t('message.updated') : t('message.created'))
   fetchData()
 }
 
 async function handleDelete(id: number) {
   await ElMessageBox.confirm(t('confirm.deleteBlindPlate'), t('confirm.deleteTitle'), { type: 'warning' })
   await deleteBlindPlate(id)
-  ElMessage.success('Deleted successfully')
+  ElMessage.success(t('message.deleted'))
   fetchData()
 }
 

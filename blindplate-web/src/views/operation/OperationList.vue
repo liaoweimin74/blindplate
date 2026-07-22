@@ -30,7 +30,7 @@
           <div class="header-right">
             <el-button type="primary" @click="showCreateDialog">
               <el-icon><Plus /></el-icon>
-              New Order
+              {{ $t('button.newOrder') }}
             </el-button>
           </div>
         </div>
@@ -152,7 +152,7 @@ function showEditDialog(row: OperationOrder) {
 
 async function handleFormSubmit(_data: any) {
   // TODO: Implement save logic
-  ElMessage.success(editData.value ? 'Updated successfully' : 'Created successfully')
+  ElMessage.success(editData.value ? t('message.updated') : t('message.created'))
   fetchData()
 }
 
