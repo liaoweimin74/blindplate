@@ -38,6 +38,6 @@
 
 ## Overall Decision
 
-- [ ] ✅ PASS — 可进入 finishing-a-development-branch 与 archive
+- [x] ✅ PASS — 可进入 finishing-a-development-branch 与 archive
 - [ ] ⚠️ PASS WITH WARNINGS
 - [ ] ❌ FAIL
