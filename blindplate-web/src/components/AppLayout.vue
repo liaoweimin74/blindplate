@@ -1,5 +1,5 @@
 ﻿<script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import AppHeader from './AppHeader.vue'
 import AppSidebar from './AppSidebar.vue'
@@ -21,12 +21,6 @@ const sidebarWidth = computed(() => sidebarVisible.value ? SIDEBAR_WIDTH : 0)
 
 /** keep-alive 缓存列表，关闭标签页时自动移除缓存 */
 const cachedTabs = computed(() => tabs.value.map(t => t.key))
-
-onMounted(() => {
-  if (route.path !== '/login') {
-    addTabFromRoute(route)
-  }
-})
 
 router.afterEach((to) => {
   if (to.path !== '/login') {
