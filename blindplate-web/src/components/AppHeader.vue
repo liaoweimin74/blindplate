@@ -3,13 +3,21 @@ import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useAuthStore } from '@/stores/auth'
-import { Bell, User, QuestionFilled, InfoFilled, SwitchButton, EditPen } from '@element-plus/icons-vue'
+import { Bell, User, QuestionFilled, InfoFilled, SwitchButton, EditPen, Fold, Expand } from '@element-plus/icons-vue'
 import { ElMessageBox, ElMessage } from 'element-plus'
 import { setLocale } from '@/i18n'
 
 const { t, locale } = useI18n()
 const router = useRouter()
 const authStore = useAuthStore()
+
+defineProps<{
+  sidebarVisible: boolean
+}>()
+
+const emit = defineEmits<{
+  (e: 'toggle-sidebar'): void
+}>()
 const userName = computed(() => authStore.userInfo?.name || authStore.userInfo?.username || 'User')
 
 function handleUserCommand(command: string) {
@@ -53,6 +61,7 @@ async function handleLogout() {
 <template>
   <el-header class="app-header" height="var(--brand-header-height)">
     <div class="header-left">
+      <el-button :icon="sidebarVisible ? Fold : Expand" text circle @click="emit('toggle-sidebar')" class="sidebar-toggle" />
       <span class="logo">{{ t('app.title') }}</span>
     </div>
     <div class="header-right">
@@ -92,6 +101,10 @@ async function handleLogout() {
 .header-left {
   display: flex;
   align-items: center;
+  gap: var(--brand-spacing-3);
+}
+.sidebar-toggle {
+  font-size: 20px;
 }
 .logo {
   font-size: var(--brand-font-size-xl);

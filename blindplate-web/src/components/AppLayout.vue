@@ -1,5 +1,5 @@
 ﻿<script setup lang="ts">
-import { ref, onMounted, provide } from 'vue'
+import { ref, computed, onMounted, provide } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import AppHeader from './AppHeader.vue'
 import AppSidebar from './AppSidebar.vue'
@@ -10,13 +10,14 @@ const router = useRouter()
 const route = useRoute()
 const { addTabFromRoute } = useTabs()
 
-const sidebarWidth = ref(220)
-const SIDEBAR_EXPANDED = 220
-const SIDEBAR_COLLAPSED = 64
+const sidebarVisible = ref(true)
+const SIDEBAR_WIDTH = 220
 
-function handleSidebarCollapse(collapsed: boolean) {
-  sidebarWidth.value = collapsed ? SIDEBAR_COLLAPSED : SIDEBAR_EXPANDED
+function toggleSidebar() {
+  sidebarVisible.value = !sidebarVisible.value
 }
+
+const sidebarWidth = computed(() => sidebarVisible.value ? SIDEBAR_WIDTH : 0)
 
 provide('tabsManager', useTabs)
 
@@ -35,10 +36,10 @@ router.afterEach((to) => {
 
 <template>
   <div class="app-layout">
-    <AppHeader />
+    <AppHeader :sidebar-visible="sidebarVisible" @toggle-sidebar="toggleSidebar" />
     <div class="layout-body">
       <el-aside :width="sidebarWidth + 'px'" class="layout-aside">
-        <AppSidebar @update:collapsed="handleSidebarCollapse" />
+        <AppSidebar />
       </el-aside>
       <div class="layout-main">
         <AppTabs />

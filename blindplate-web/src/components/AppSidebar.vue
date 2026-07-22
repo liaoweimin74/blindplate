@@ -1,5 +1,5 @@
 ﻿<script setup lang="ts">
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import {
@@ -7,8 +7,6 @@ import {
   Location,
   List,
   DataAnalysis,
-  Expand,
-  Fold,
   HomeFilled,
   User,
   Setting
@@ -17,16 +15,6 @@ import {
 const { t } = useI18n()
 const router = useRouter()
 const route = useRoute()
-
-const isCollapsed = ref(false)
-const emit = defineEmits<{
-  (e: 'update:collapsed', value: boolean): void
-}>()
-
-function toggleCollapse() {
-  isCollapsed.value = !isCollapsed.value
-  emit('update:collapsed', isCollapsed.value)
-}
 
 const menuItems = [
   { key: '/dashboard', title: 'menu.dashboard', icon: HomeFilled, path: '/dashboard' },
@@ -47,19 +35,8 @@ function navigate(path: string) {
 
 <template>
   <el-scrollbar class="app-sidebar">
-    <div class="sidebar-header">
-      <span v-if="!isCollapsed" class="logo-text">{{ t('app.shortTitle') }}</span>
-      <el-button
-        :icon="isCollapsed ? Expand : Fold"
-        text
-        @click="toggleCollapse"
-        class="collapse-btn"
-      />
-    </div>
     <el-menu
       :default-active="activeMenu"
-      :collapse="isCollapsed"
-      :collapse-transition="false"
       class="sidebar-menu"
       @select="navigate"
     >
@@ -78,30 +55,9 @@ function navigate(path: string) {
 <style scoped>
 .app-sidebar {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.sidebar-header {
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  border-bottom: 1px solid var(--brand-border-light);
-}
-.logo-text {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--brand-text-primary);
-}
-.collapse-btn {
-  padding: 8px;
 }
 .sidebar-menu {
   border-right: none;
-  flex: 1;
-}
-.sidebar-menu:not(.el-menu--collapse) {
   width: 100%;
 }
 </style>
