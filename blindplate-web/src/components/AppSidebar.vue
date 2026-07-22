@@ -1,6 +1,7 @@
 ﻿<script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import {
   Document,
   Location,
@@ -13,23 +14,28 @@ import {
   Setting
 } from '@element-plus/icons-vue'
 
+const { t } = useI18n()
 const router = useRouter()
 const route = useRoute()
 
 const isCollapsed = ref(false)
+const emit = defineEmits<{
+  (e: 'update:collapsed', value: boolean): void
+}>()
 
 function toggleCollapse() {
   isCollapsed.value = !isCollapsed.value
+  emit('update:collapsed', isCollapsed.value)
 }
 
 const menuItems = [
-  { key: '/dashboard', title: '首页', icon: HomeFilled, path: '/dashboard' },
-  { key: '/blindplates', title: '盲板管理', icon: Document, path: '/blindplates' },
-  { key: '/locations', title: '位置管理', icon: Location, path: '/locations' },
-  { key: '/operations', title: '操作记录', icon: List, path: '/operations' },
-  { key: '/inspections', title: '巡检记录', icon: DataAnalysis, path: '/inspections' },
-  { key: '/users', title: '用户管理', icon: User, path: '/users' },
-  { key: '/settings', title: '系统设置', icon: Setting, path: '/settings' }
+  { key: '/dashboard', title: 'menu.dashboard', icon: HomeFilled, path: '/dashboard' },
+  { key: '/blindplates', title: 'menu.blindplates', icon: Document, path: '/blindplates' },
+  { key: '/locations', title: 'menu.locations', icon: Location, path: '/locations' },
+  { key: '/operations', title: 'menu.operations', icon: List, path: '/operations' },
+  { key: '/inspections', title: 'menu.inspections', icon: DataAnalysis, path: '/inspections' },
+  { key: '/users', title: 'menu.users', icon: User, path: '/users' },
+  { key: '/settings', title: 'menu.settings', icon: Setting, path: '/settings' }
 ]
 
 const activeMenu = computed(() => route.path)
@@ -42,7 +48,7 @@ function navigate(path: string) {
 <template>
   <el-scrollbar class="app-sidebar">
     <div class="sidebar-header">
-      <span v-if="!isCollapsed" class="logo-text">盲板系统</span>
+      <span v-if="!isCollapsed" class="logo-text">{{ t('app.shortTitle') }}</span>
       <el-button
         :icon="isCollapsed ? Expand : Fold"
         text
@@ -63,7 +69,7 @@ function navigate(path: string) {
         :index="item.path"
       >
         <el-icon><component :is="item.icon" /></el-icon>
-        <template #title>{{ item.title }}</template>
+        <template #title>{{ t(item.title) }}</template>
       </el-menu-item>
     </el-menu>
   </el-scrollbar>

@@ -1,8 +1,8 @@
 <template>
   <div class="dashboard">
     <div class="dashboard-header">
-      <h1 class="dashboard-title">Dashboard</h1>
-      <p class="dashboard-subtitle">System Overview and Statistics</p>
+      <h1 class="dashboard-title">{{ $t('page.dashboard') }}</h1>
+      <p class="dashboard-subtitle">{{ $t('page.dashboardSubtitle') }}</p>
     </div>
     
     <el-row :gutter="24" class="stats-row">
@@ -13,7 +13,7 @@
           </div>
           <div class="stat-content">
             <div class="stat-value">{{ stats.totalBlindPlates || 0 }}</div>
-            <div class="stat-label">Total Blind Plates</div>
+            <div class="stat-label">{{ $t('dashboard.totalBlindPlates') }}</div>
           </div>
         </div>
       </el-col>
@@ -24,7 +24,7 @@
           </div>
           <div class="stat-content">
             <div class="stat-value">{{ stats.totalOrders || 0 }}</div>
-            <div class="stat-label">Total Orders</div>
+            <div class="stat-label">{{ $t('dashboard.totalOrders') }}</div>
           </div>
         </div>
       </el-col>
@@ -35,7 +35,7 @@
           </div>
           <div class="stat-content">
             <div class="stat-value">{{ stats.totalLocations || 0 }}</div>
-            <div class="stat-label">Locations</div>
+            <div class="stat-label">{{ $t('dashboard.locations') }}</div>
           </div>
         </div>
       </el-col>
@@ -46,7 +46,7 @@
           </div>
           <div class="stat-content">
             <div class="stat-value">{{ stats.totalInspections || 0 }}</div>
-            <div class="stat-label">Inspections</div>
+            <div class="stat-label">{{ $t('dashboard.inspections') }}</div>
           </div>
         </div>
       </el-col>
@@ -56,30 +56,30 @@
       <el-col :span="16">
         <el-card class="content-card">
           <template #header>
-            <span class="card-title">Recent Operations</span>
+            <span class="card-title">{{ $t('dashboard.recentOperations') }}</span>
           </template>
           <div class="empty-state">
-            <el-empty description="No recent operations" />
+            <el-empty :description="$t('empty.noRecentOps')" />
           </div>
         </el-card>
       </el-col>
       <el-col :span="8">
         <el-card class="content-card">
           <template #header>
-            <span class="card-title">Quick Actions</span>
+            <span class="card-title">{{ $t('dashboard.quickActions') }}</span>
           </template>
           <div class="quick-actions">
             <el-button type="primary" class="action-btn">
               <el-icon><Document /></el-icon>
-              Add Blind Plate
+              {{ $t('dashboard.addBlindPlate') }}
             </el-button>
             <el-button type="success" class="action-btn">
               <el-icon><Location /></el-icon>
-              Manage Locations
+              {{ $t('dashboard.manageLocations') }}
             </el-button>
             <el-button type="warning" class="action-btn">
               <el-icon><List /></el-icon>
-              View Orders
+              {{ $t('dashboard.viewOrders') }}
             </el-button>
           </div>
         </el-card>

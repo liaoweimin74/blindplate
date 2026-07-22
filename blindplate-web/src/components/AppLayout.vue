@@ -11,6 +11,12 @@ const route = useRoute()
 const { addTabFromRoute } = useTabs()
 
 const sidebarWidth = ref(220)
+const SIDEBAR_EXPANDED = 220
+const SIDEBAR_COLLAPSED = 64
+
+function handleSidebarCollapse(collapsed: boolean) {
+  sidebarWidth.value = collapsed ? SIDEBAR_COLLAPSED : SIDEBAR_EXPANDED
+}
 
 provide('tabsManager', useTabs)
 
@@ -30,7 +36,7 @@ router.afterEach((to) => {
 <template>
   <el-container class="app-layout">
     <el-aside :width="sidebarWidth + 'px'" class="layout-aside">
-      <AppSidebar />
+      <AppSidebar @update:collapsed="handleSidebarCollapse" />
     </el-aside>
     <el-container class="layout-main">
       <AppHeader />

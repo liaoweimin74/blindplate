@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { useAuthStore } from '@/stores/auth'
-import { Bell, User, QuestionFilled, InfoFilled, SwitchButton } from '@element-plus/icons-vue'
+import { Bell, User, QuestionFilled, InfoFilled, SwitchButton, EditPen } from '@element-plus/icons-vue'
 import { ElMessageBox, ElMessage } from 'element-plus'
+import { setLocale } from '@/i18n'
 
+const { t, locale } = useI18n()
 const router = useRouter()
 const authStore = useAuthStore()
 const userName = computed(() => authStore.userInfo?.name || authStore.userInfo?.username || 'User')
@@ -12,13 +15,19 @@ const userName = computed(() => authStore.userInfo?.name || authStore.userInfo?.
 function handleUserCommand(command: string) {
   switch (command) {
     case 'profile':
-      ElMessage.info('Profile coming soon')
+      ElMessage.info(t('message.profileComing'))
       break
     case 'help':
-      ElMessage.info('Help center coming soon')
+      ElMessage.info(t('message.helpComing'))
       break
     case 'about':
-      ElMessageBox.alert('Blind Plate Management System v1.0.0', 'About')
+      ElMessageBox.alert(t('confirm.aboutContent'), t('confirm.aboutTitle'))
+      break
+    case 'language-zh':
+      setLocale('zh-CN')
+      break
+    case 'language-en':
+      setLocale('en')
       break
     case 'logout':
       handleLogout()
@@ -28,9 +37,9 @@ function handleUserCommand(command: string) {
 
 async function handleLogout() {
   try {
-    await ElMessageBox.confirm('Are you sure you want to logout?', 'Confirm', {
-      confirmButtonText: 'Yes',
-      cancelButtonText: 'No',
+    await ElMessageBox.confirm(t('confirm.logoutContent'), t('confirm.logoutTitle'), {
+      confirmButtonText: t('button.yes'),
+      cancelButtonText: t('button.no'),
       type: 'warning'
     })
     authStore.logout()
@@ -44,7 +53,7 @@ async function handleLogout() {
 <template>
   <el-header class="app-header" height="var(--brand-header-height)">
     <div class="header-left">
-      <span class="logo">Blind Plate Management</span>
+      <span class="logo">{{ t('app.title') }}</span>
     </div>
     <div class="header-right">
       <el-badge :value="0" :hidden="true" class="message-badge">
@@ -57,10 +66,12 @@ async function handleLogout() {
         </div>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item command="profile" :icon="User">Profile</el-dropdown-item>
-            <el-dropdown-item command="help" :icon="QuestionFilled">Help</el-dropdown-item>
-            <el-dropdown-item command="about" :icon="InfoFilled">About</el-dropdown-item>
-            <el-dropdown-item divided command="logout" :icon="SwitchButton">Logout</el-dropdown-item>
+            <el-dropdown-item command="profile" :icon="User">{{ t('header.accountInfo') }}</el-dropdown-item>
+            <el-dropdown-item command="help" :icon="QuestionFilled">{{ t('header.help') }}</el-dropdown-item>
+            <el-dropdown-item command="about" :icon="InfoFilled">{{ t('header.about') }}</el-dropdown-item>
+            <el-dropdown-item divided :icon="EditPen" command="language-zh" v-if="locale !== 'zh-CN'">{{ t('header.chinese') }}</el-dropdown-item>
+            <el-dropdown-item :icon="EditPen" command="language-en" v-if="locale !== 'en'">{{ t('header.english') }}</el-dropdown-item>
+            <el-dropdown-item divided command="logout" :icon="SwitchButton">{{ t('header.logout') }}</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
@@ -111,5 +122,9 @@ async function handleLogout() {
 .user-name {
   font-size: var(--brand-font-size-base);
   color: var(--brand-text-primary);
+}
+.language-trigger {
+  display: block;
+  width: 100%;
 }
 </style>

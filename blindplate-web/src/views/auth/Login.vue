@@ -2,14 +2,14 @@
   <div class="login-container">
     <div class="login-card">
       <div class="login-header">
-        <h1 class="login-title">Blind Plate Management</h1>
-        <p class="login-subtitle">Industrial Safety System</p>
+        <h1 class="login-title">{{ $t('page.login') }}</h1>
+        <p class="login-subtitle">{{ $t('page.loginSubtitle') }}</p>
       </div>
       <el-form ref="formRef" :model="form" :rules="rules" @submit.prevent="handleLogin">
         <el-form-item prop="username">
           <el-input
             v-model="form.username"
-            placeholder="Username"
+            :placeholder="$t('form.enterUsername')"
             size="large"
             prefix-icon="User"
           />
@@ -18,7 +18,7 @@
           <el-input
             v-model="form.password"
             type="password"
-            placeholder="Password"
+            :placeholder="$t('form.enterPassword')"
             size="large"
             prefix-icon="Lock"
             show-password
@@ -32,7 +32,7 @@
             class="login-btn"
             @click="handleLogin"
           >
-            Login
+            {{ $t('button.login') }}
           </el-button>
         </el-form-item>
       </el-form>
@@ -43,10 +43,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import type { FormInstance, FormRules } from 'element-plus'
 import { useAuthStore } from '@/stores/auth'
 import { login } from '@/api/auth'
 
+const { t } = useI18n()
 const router = useRouter()
 const authStore = useAuthStore()
 const formRef = ref<FormInstance>()
@@ -55,10 +57,10 @@ const form = ref({ username: '', password: '' })
 const loading = ref(false)
 
 const rules: FormRules = {
-  username: [{ required: true, message: 'Please enter username', trigger: 'blur' }],
+  username: [{ required: true, message: t('form.enterUsername'), trigger: 'blur' }],
   password: [
-    { required: true, message: 'Please enter password', trigger: 'blur' },
-    { min: 6, message: 'Password must be at least 6 characters', trigger: 'blur' }
+    { required: true, message: t('form.enterPassword'), trigger: 'blur' },
+    { min: 6, message: t('form.passwordMin'), trigger: 'blur' }
   ]
 }
 

@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Search, Plus, Edit, Delete, Key } from '@element-plus/icons-vue'
 import { getUsers, deleteUser, resetPassword } from '@/api/user'
 import type { User } from '@/types'
 import UserForm from '@/components/UserForm.vue'
+
+const { t } = useI18n()
 
 const users = ref<User[]>([])
 const loading = ref(false)
@@ -29,10 +32,6 @@ function getStatusType(status: number) {
   }
 }
 
-function getStatusText(status: number) {
-  return status === 1 ? 'Active' : 'Disabled'
-}
-
 async function fetchData() {
   loading.value = true
   try {
@@ -54,21 +53,21 @@ function showEditDialog(row: User) {
 }
 
 async function handleFormSubmit(_data: any) {
-  ElMessage.success(editData.value ? 'Updated successfully' : 'Created successfully')
+  ElMessage.success(t('message.' + (editData.value ? 'updated' : 'created')))
   fetchData()
 }
 
 async function handleDelete(id: number) {
-  await ElMessageBox.confirm('Are you sure you want to delete this user?', 'Confirm Delete', { type: 'warning' })
+  await ElMessageBox.confirm(t('confirm.deleteUser'), t('confirm.deleteTitle'), { type: 'warning' })
   await deleteUser(id)
-  ElMessage.success('Deleted successfully')
+  ElMessage.success(t('message.deleted'))
   fetchData()
 }
 
 async function handleResetPassword(id: number) {
-  await ElMessageBox.confirm('Reset password to default?', 'Confirm', { type: 'warning' })
+  await ElMessageBox.confirm(t('confirm.resetPwContent'), t('confirm.deleteTitle'), { type: 'warning' })
   await resetPassword(id)
-  ElMessage.success('Password reset successfully')
+  ElMessage.success(t('message.passwordReset'))
 }
 
 onMounted(fetchData)
@@ -77,8 +76,8 @@ onMounted(fetchData)
 <template>
   <div class="page-container">
     <div class="page-header">
-      <h1 class="page-title">Users</h1>
-      <p class="page-subtitle">User account management</p>
+      <h1 class="page-title">{{ t('page.users') }}</h1>
+      <p class="page-subtitle">{{ t('page.usersSubtitle') }}</p>
     </div>
 
     <el-card class="content-card">
@@ -87,7 +86,7 @@ onMounted(fetchData)
           <div class="header-left">
             <el-input
               v-model="searchQuery"
-              placeholder="Search by username or name"
+              :placeholder="t('placeholder.searchByUser')"
               clearable
               class="search-input"
             >
@@ -99,36 +98,36 @@ onMounted(fetchData)
           <div class="header-right">
             <el-button type="primary" @click="showCreateDialog">
               <el-icon><Plus /></el-icon>
-              Add User
+              {{ t('button.addUser') }}
             </el-button>
           </div>
         </div>
       </template>
 
       <el-table :data="filteredUsers" v-loading="loading" class="data-table">
-        <el-table-column prop="username" label="Username" width="150" />
-        <el-table-column prop="name" label="Name" width="150" />
-        <el-table-column prop="phone" label="Phone" width="150" />
-        <el-table-column prop="status" label="Status" width="100">
+        <el-table-column prop="username" :label="t('table.username')" width="150" />
+        <el-table-column prop="name" :label="t('table.name')" width="150" />
+        <el-table-column prop="phone" :label="t('table.phone')" width="150" />
+        <el-table-column prop="status" :label="t('table.status')" width="100">
           <template #default="{ row }">
             <el-tag :type="getStatusType(row.status)" effect="light">
-              {{ getStatusText(row.status) }}
+              {{ row.status === 1 ? t('tag.active') : t('tag.disabled') }}
             </el-tag>
           </template>
         </el-table-column>
-        <el-table-column label="Actions" width="240" fixed="right">
+        <el-table-column :label="t('table.actions')" width="240" fixed="right">
           <template #default="{ row }">
             <el-button size="small" text type="primary" @click="showEditDialog(row)">
               <el-icon><Edit /></el-icon>
-              Edit
+              {{ t('button.edit') }}
             </el-button>
             <el-button size="small" text type="warning" @click="handleResetPassword(row.id)">
               <el-icon><Key /></el-icon>
-              Reset PW
+              {{ t('button.resetPw') }}
             </el-button>
             <el-button size="small" text type="danger" @click="handleDelete(row.id)">
               <el-icon><Delete /></el-icon>
-              Delete
+              {{ t('button.delete') }}
             </el-button>
           </template>
         </el-table-column>
@@ -144,5 +143,55 @@ onMounted(fetchData)
 </template>
 
 <style scoped>
-@import '@/styles/global.scss';
+.page-container {
+  padding: var(--brand-spacing-6);
+}
+.page-header {
+  margin-bottom: var(--brand-spacing-6);
+}
+.page-title {
+  font-size: var(--brand-font-size-2xl);
+  font-weight: var(--brand-font-weight-semibold);
+  color: var(--brand-text-primary);
+  margin: 0 0 var(--brand-spacing-2) 0;
+}
+.page-subtitle {
+  font-size: var(--brand-font-size-base);
+  color: var(--brand-text-secondary);
+  margin: 0;
+}
+.content-card {
+  background: var(--brand-bg-white);
+  border-radius: var(--brand-radius-lg);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: var(--brand-spacing-4);
+}
+.header-left {
+  display: flex;
+  gap: var(--brand-spacing-3);
+}
+.header-right {
+  display: flex;
+  gap: var(--brand-spacing-3);
+  flex-shrink: 0;
+}
+.search-input {
+  width: 280px;
+}
+.data-table {
+  width: 100%;
+}
+:deep(.el-table__header th) {
+  background-color: var(--brand-bg-page);
+  color: var(--brand-text-primary);
+  font-weight: var(--brand-font-weight-medium);
+}
+:deep(.el-table__row:hover td) {
+  background-color: var(--brand-bg-hover);
+}
 </style>

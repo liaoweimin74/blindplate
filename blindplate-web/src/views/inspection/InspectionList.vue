@@ -1,8 +1,8 @@
 <template>
   <div class="page-container">
     <div class="page-header">
-      <h1 class="page-title">Inspections</h1>
-      <p class="page-subtitle">Inspection plan management</p>
+      <h1 class="page-title">{{ $t('page.inspections') }}</h1>
+      <p class="page-subtitle">{{ $t('page.inspectionsSubtitle') }}</p>
     </div>
 
     <el-card class="content-card">

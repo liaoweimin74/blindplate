@@ -1,8 +1,8 @@
 <template>
   <div class="page-container">
     <div class="page-header">
-      <h1 class="page-title">Blind Plates</h1>
-      <p class="page-subtitle">Manage blind plate inventory</p>
+      <h1 class="page-title">{{ $t('page.blindplates') }}</h1>
+      <p class="page-subtitle">{{ $t('page.blindplatesSubtitle') }}</p>
     </div>
 
     <el-card class="content-card">
@@ -11,7 +11,7 @@
           <div class="header-left">
             <el-input
               v-model="searchQuery"
-              placeholder="Search by code or name"
+              :placeholder="$t('placeholder.searchByCode')"
               clearable
               class="search-input"
             >
@@ -23,33 +23,27 @@
           <div class="header-right">
             <el-button type="primary" @click="showCreateDialog">
               <el-icon><Plus /></el-icon>
-              Add Blind Plate
+              {{ $t('button.addBlindPlate') }}
             </el-button>
           </div>
         </div>
       </template>
 
       <el-table :data="filteredBlindPlates" v-loading="loading" class="data-table">
-        <el-table-column prop="code" label="Code" width="120" />
-        <el-table-column prop="name" label="Name" min-width="150" />
-        <el-table-column prop="spec" label="Specification" width="150" />
-        <el-table-column prop="material" label="Material" width="120" />
-        <el-table-column prop="status" label="Status" width="120">
-          <template #default="{ row }">
-            <el-tag :type="getStatusType(row.status)" effect="light">
-              {{ row.status }}
-            </el-tag>
-          </template>
-        </el-table-column>
-        <el-table-column label="Actions" width="180" fixed="right">
+        <el-table-column prop="code" :label="$t('table.code')" width="120" />
+        <el-table-column prop="name" :label="$t('table.name')" min-width="150" />
+        <el-table-column prop="spec" :label="$t('table.spec')" width="150" />
+        <el-table-column prop="material" :label="$t('table.material')" width="120" />
+        <el-table-column prop="status" :label="$t('table.status')" width="120" />
+        <el-table-column :label="$t('table.actions')" width="180" fixed="right">
           <template #default="{ row }">
             <el-button size="small" text type="primary" @click="showEditDialog(row)">
               <el-icon><Edit /></el-icon>
-              Edit
+              {{ $t('button.edit') }}
             </el-button>
             <el-button size="small" text type="danger" @click="handleDelete(row.id)">
               <el-icon><Delete /></el-icon>
-              Delete
+              {{ $t('button.delete') }}
             </el-button>
           </template>
         </el-table-column>
@@ -66,11 +60,14 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Search, Plus, Edit, Delete } from '@element-plus/icons-vue'
 import { getBlindPlates, deleteBlindPlate } from '@/api/blindplate'
 import type { BlindPlate } from '@/types'
 import BlindPlateForm from '@/components/BlindPlateForm.vue'
+
+const { t } = useI18n()
 
 const blindPlates = ref<BlindPlate[]>([])
 const loading = ref(false)
@@ -86,15 +83,6 @@ const filteredBlindPlates = computed(() => {
     bp.name.toLowerCase().includes(query)
   )
 })
-
-function getStatusType(status: string) {
-  switch (status) {
-    case 'installed': return 'success'
-    case 'removed': return 'warning'
-    case 'maintenance': return 'info'
-    default: return ''
-  }
-}
 
 async function fetchData() {
   loading.value = true
@@ -123,7 +111,7 @@ async function handleFormSubmit(_data: any) {
 }
 
 async function handleDelete(id: number) {
-  await ElMessageBox.confirm('Are you sure you want to delete this blind plate?', 'Confirm Delete', { type: 'warning' })
+  await ElMessageBox.confirm(t('confirm.deleteBlindPlate'), t('confirm.deleteTitle'), { type: 'warning' })
   await deleteBlindPlate(id)
   ElMessage.success('Deleted successfully')
   fetchData()

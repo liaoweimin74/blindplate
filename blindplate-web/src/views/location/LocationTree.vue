@@ -1,8 +1,8 @@
 <template>
   <div class="page-container">
     <div class="page-header">
-      <h1 class="page-title">Locations</h1>
-      <p class="page-subtitle">Manage location hierarchy</p>
+      <h1 class="page-title">{{ $t('page.locations') }}</h1>
+      <p class="page-subtitle">{{ $t('page.locationsSubtitle') }}</p>
     </div>
 
     <el-row :gutter="24">
