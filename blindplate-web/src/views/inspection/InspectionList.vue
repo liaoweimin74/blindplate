@@ -11,7 +11,7 @@
           <div class="header-left">
             <el-input
               v-model="searchQuery"
-              placeholder="Search by plan name"
+              :placeholder="$t('placeholder.searchByPlan')"
               clearable
               class="search-input"
             >
@@ -56,11 +56,11 @@
           <template #default="{ row }">
             <el-button size="small" text type="primary" @click="showEditDialog(row)">
               <el-icon><Edit /></el-icon>
-              Edit
+              {{ $t('button.edit') }}
             </el-button>
             <el-button size="small" text type="danger" @click="handleDelete(row.id)">
               <el-icon><Delete /></el-icon>
-              Delete
+              {{ $t('button.delete') }}
             </el-button>
           </template>
         </el-table-column>
@@ -77,10 +77,13 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Search, Plus, Edit, Delete } from '@element-plus/icons-vue'
 import axios from 'axios'
 import InspectionForm from '@/components/InspectionForm.vue'
+
+const { t } = useI18n()
 
 const plans = ref<any[]>([])
 const loading = ref(false)
@@ -146,9 +149,9 @@ async function handleFormSubmit(_data: any) {
 }
 
 async function handleDelete(id: number) {
-  await ElMessageBox.confirm('Are you sure you want to delete this inspection plan?', 'Confirm Delete', { type: 'warning' })
+  await ElMessageBox.confirm(t('confirm.deleteInspection'), t('confirm.deleteTitle'), { type: 'warning' })
   await axios.delete(`/api/v1/inspections/${id}`)
-  ElMessage.success('Deleted successfully')
+  ElMessage.success(t('message.deleted'))
   fetchData()
 }
 

@@ -19,7 +19,7 @@
           </template>
           <el-input
             v-model="searchQuery"
-            placeholder="Search locations"
+            :placeholder="$t('placeholder.searchLocations')"
             clearable
             class="tree-search"
           >
@@ -46,8 +46,8 @@
             <div class="card-header">
               <span class="card-title">{{ $t('table.locationName') }}</span>
               <el-button v-if="selectedNode" type="primary" size="small" @click="showEditDialog">
-                <el-icon><Edit /></el-icon>
-                Edit
+<el-icon><Edit /></el-icon>
+              {{ $t('button.edit') }}
               </el-button>
             </div>
           </template>
@@ -60,7 +60,7 @@
               <el-descriptions-item :label="$t('descriptions.description')" :span="2">{{ selectedNode.description || 'N/A' }}</el-descriptions-item>
             </el-descriptions>
           </div>
-          <el-empty v-else description="Select a location to view details" />
+          <el-empty v-else :description="$t('empty.selectLocation')" />
         </el-card>
       </el-col>
     </el-row>
