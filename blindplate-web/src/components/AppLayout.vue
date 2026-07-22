@@ -34,28 +34,37 @@ router.afterEach((to) => {
 </script>
 
 <template>
-  <el-container class="app-layout">
-    <el-aside :width="sidebarWidth + 'px'" class="layout-aside">
-      <AppSidebar @update:collapsed="handleSidebarCollapse" />
-    </el-aside>
-    <el-container class="layout-main">
-      <AppHeader />
-      <AppTabs />
-      <el-main class="layout-content">
-        <router-view v-slot="{ Component }">
-          <keep-alive>
-            <component :is="Component" :key="route.path" />
-          </keep-alive>
-        </router-view>
-      </el-main>
-    </el-container>
-  </el-container>
+  <div class="app-layout">
+    <AppHeader />
+    <div class="layout-body">
+      <el-aside :width="sidebarWidth + 'px'" class="layout-aside">
+        <AppSidebar @update:collapsed="handleSidebarCollapse" />
+      </el-aside>
+      <div class="layout-main">
+        <AppTabs />
+        <el-main class="layout-content">
+          <router-view v-slot="{ Component }">
+            <keep-alive>
+              <component :is="Component" :key="route.path" />
+            </keep-alive>
+          </router-view>
+        </el-main>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
 .app-layout {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   background-color: var(--brand-bg-page);
+}
+.layout-body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
 }
 .layout-aside {
   background-color: var(--brand-bg-white);
@@ -66,6 +75,8 @@ router.afterEach((to) => {
 .layout-main {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  min-width: 0;
   min-height: 0;
 }
 .layout-content {
