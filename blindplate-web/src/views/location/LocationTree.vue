@@ -10,7 +10,7 @@
         <el-card class="tree-card">
           <template #header>
             <div class="card-header">
-              <span class="card-title">Location Tree</span>
+              <span class="card-title">{{ $t('menu.locations') }}</span>
               <el-button type="primary" size="small" @click="showCreateDialog">
                 <el-icon><Plus /></el-icon>
                 Add
@@ -44,7 +44,7 @@
         <el-card class="detail-card">
           <template #header>
             <div class="card-header">
-              <span class="card-title">Location Details</span>
+              <span class="card-title">{{ $t('table.locationName') }}</span>
               <el-button v-if="selectedNode" type="primary" size="small" @click="showEditDialog">
                 <el-icon><Edit /></el-icon>
                 Edit
@@ -53,11 +53,11 @@
           </template>
           <div v-if="selectedNode" class="detail-content">
             <el-descriptions :column="2" border>
-              <el-descriptions-item label="Name">{{ selectedNode.name }}</el-descriptions-item>
-              <el-descriptions-item label="Code">{{ selectedNode.code }}</el-descriptions-item>
-              <el-descriptions-item label="Type">{{ selectedNode.type }}</el-descriptions-item>
-              <el-descriptions-item label="Parent">{{ selectedNode.parentName || 'Root' }}</el-descriptions-item>
-              <el-descriptions-item label="Description" :span="2">{{ selectedNode.description || 'N/A' }}</el-descriptions-item>
+              <el-descriptions-item :label="$t('descriptions.name')">{{ selectedNode.name }}</el-descriptions-item>
+              <el-descriptions-item :label="$t('descriptions.code')">{{ selectedNode.code }}</el-descriptions-item>
+              <el-descriptions-item :label="$t('descriptions.type')">{{ selectedNode.type }}</el-descriptions-item>
+              <el-descriptions-item :label="$t('descriptions.parent')">{{ selectedNode.parentName || $t('descriptions.root') }}</el-descriptions-item>
+              <el-descriptions-item :label="$t('descriptions.description')" :span="2">{{ selectedNode.description || 'N/A' }}</el-descriptions-item>
             </el-descriptions>
           </div>
           <el-empty v-else description="Select a location to view details" />

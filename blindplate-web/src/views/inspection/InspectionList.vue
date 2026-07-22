@@ -19,11 +19,11 @@
                 <el-icon><Search /></el-icon>
               </template>
             </el-input>
-            <el-select v-model="frequencyFilter" placeholder="Frequency" clearable class="frequency-select">
-              <el-option label="All" value="" />
-              <el-option label="Daily" value="daily" />
-              <el-option label="Weekly" value="weekly" />
-              <el-option label="Monthly" value="monthly" />
+            <el-select v-model="frequencyFilter" :placeholder="$t('placeholder.selectFrequency')" clearable class="frequency-select">
+              <el-option :label="$t('filter.all')" value="" />
+              <el-option :label="$t('filter.daily')" value="daily" />
+              <el-option :label="$t('filter.weekly')" value="weekly" />
+              <el-option :label="$t('filter.monthly')" value="monthly" />
             </el-select>
           </div>
           <div class="header-right">
@@ -36,23 +36,23 @@
       </template>
 
       <el-table :data="filteredPlans" v-loading="loading" class="data-table">
-        <el-table-column prop="name" label="Plan Name" min-width="200" />
-        <el-table-column prop="frequency" label="Frequency" width="120">
+        <el-table-column prop="name" :label="$t('table.planName')" min-width="200" />
+        <el-table-column prop="frequency" :label="$t('table.frequency')" width="120">
           <template #default="{ row }">
             <el-tag :type="getFrequencyColor(row.frequency)" effect="plain">
               {{ row.frequency }}
             </el-tag>
           </template>
         </el-table-column>
-        <el-table-column prop="status" label="Status" width="120">
+        <el-table-column prop="status" :label="$t('table.status')" width="120">
           <template #default="{ row }">
             <el-tag :type="getStatusType(row.status)" effect="light">
               {{ row.status }}
             </el-tag>
           </template>
         </el-table-column>
-        <el-table-column prop="nextDate" label="Next Execution" width="150" />
-        <el-table-column label="Actions" width="180" fixed="right">
+        <el-table-column prop="nextDate" :label="$t('table.nextDate')" width="150" />
+        <el-table-column :label="$t('table.actions')" width="180" fixed="right">
           <template #default="{ row }">
             <el-button size="small" text type="primary" @click="showEditDialog(row)">
               <el-icon><Edit /></el-icon>

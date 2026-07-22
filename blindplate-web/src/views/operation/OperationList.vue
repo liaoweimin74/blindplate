@@ -11,7 +11,7 @@
           <div class="header-left">
             <el-input
               v-model="searchQuery"
-              placeholder="Search by order number"
+              :placeholder="$t('placeholder.searchByOrder')"
               clearable
               class="search-input"
             >
@@ -19,12 +19,12 @@
                 <el-icon><Search /></el-icon>
               </template>
             </el-input>
-            <el-select v-model="statusFilter" placeholder="Status" clearable class="status-select">
-              <el-option label="All" value="" />
-              <el-option label="Pending" value="pending" />
-              <el-option label="In Progress" value="in_progress" />
-              <el-option label="Completed" value="completed" />
-              <el-option label="Cancelled" value="cancelled" />
+            <el-select v-model="statusFilter" :placeholder="$t('placeholder.selectStatus')" clearable class="status-select">
+              <el-option :label="$t('filter.all')" value="" />
+              <el-option :label="$t('filter.pending')" value="pending" />
+              <el-option :label="$t('filter.inProgress')" value="in_progress" />
+              <el-option :label="$t('filter.completed')" value="completed" />
+              <el-option :label="$t('filter.cancelled')" value="cancelled" />
             </el-select>
           </div>
           <div class="header-right">
@@ -37,24 +37,24 @@
       </template>
 
       <el-table :data="filteredOrders" v-loading="loading" class="data-table">
-        <el-table-column prop="orderNo" label="Order No." width="150" />
-        <el-table-column prop="type" label="Type" width="120">
+        <el-table-column prop="orderNo" :label="$t('table.orderNo')" width="150" />
+        <el-table-column prop="type" :label="$t('table.type')" width="120">
           <template #default="{ row }">
             <el-tag :type="getTypeColor(row.type)" effect="plain">
               {{ row.type }}
             </el-tag>
           </template>
         </el-table-column>
-        <el-table-column prop="status" label="Status" width="120">
+        <el-table-column prop="status" :label="$t('table.status')" width="120">
           <template #default="{ row }">
             <el-tag :type="getStatusType(row.status)" effect="light">
               {{ formatStatus(row.status) }}
             </el-tag>
           </template>
         </el-table-column>
-        <el-table-column prop="plannedDate" label="Planned Date" width="150" />
-        <el-table-column prop="description" label="Description" min-width="200" show-overflow-tooltip />
-        <el-table-column label="Actions" width="180" fixed="right">
+        <el-table-column prop="plannedDate" :label="$t('table.plannedDate')" width="150" />
+        <el-table-column prop="description" :label="$t('table.description')" min-width="200" show-overflow-tooltip />
+        <el-table-column :label="$t('table.actions')" width="180" fixed="right">
           <template #default="{ row }">
             <el-button size="small" text type="primary" @click="showEditDialog(row)">
               <el-icon><Edit /></el-icon>
