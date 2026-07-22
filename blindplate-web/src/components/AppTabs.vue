@@ -37,7 +37,6 @@ function isClosable(key: string): boolean {
     <el-tabs
       v-model="activeTabName"
       type="card"
-      closable
       class="tabs-container"
       @tab-click="(pane: any) => handleTabClick(pane.paneName as string)"
       @tab-remove="handleTabRemove"
