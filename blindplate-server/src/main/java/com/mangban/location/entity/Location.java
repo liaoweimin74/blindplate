@@ -29,6 +29,11 @@ public class Location {
     @Column(length = 20)
     private String type;
 
+    @Column(length = 50, unique = true)
+    private String code;
+
+    private Integer level;
+
     @OneToMany(mappedBy = "parentId", fetch = FetchType.LAZY)
     private List<Location> children = new ArrayList<>();
 
