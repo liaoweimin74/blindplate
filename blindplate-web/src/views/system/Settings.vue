@@ -75,3 +75,27 @@ async function handleSave() {
     </el-card>
   </div>
 </template>
+
+<style scoped>
+.page-container {
+  padding: var(--brand-spacing-6);
+}
+.page-header {
+  margin-bottom: var(--brand-spacing-6);
+}
+.page-title {
+  font-size: var(--brand-font-size-2xl);
+  font-weight: var(--brand-font-weight-semibold);
+  color: var(--brand-text-primary);
+  margin: 0 0 var(--brand-spacing-2) 0;
+}
+.page-subtitle {
+  font-size: var(--brand-font-size-base);
+  color: var(--brand-text-secondary);
+  margin: 0;
+}
+.content-card {
+  background: var(--brand-bg-white);
+  border-radius: var(--brand-radius-lg);
+}
+</style>
