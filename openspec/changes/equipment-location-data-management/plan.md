@@ -1,4 +1,4 @@
-﻿# Equipment/Location Data Management Implementation Plan
+# Equipment/Location Data Management Implementation Plan
 
 > **For agentic workers:** Use superpowers:subagent-driven-development
 > to implement this plan task-by-task.

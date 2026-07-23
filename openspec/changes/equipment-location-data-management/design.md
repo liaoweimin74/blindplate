@@ -1,4 +1,4 @@
-﻿## Context
+## Context
 
 当前装置/位置数据管理仅有通用的 `Location` 树结构（id/parentId/name/type/description），type 枚举为 area/building/floor/room/equipment 五种，由 init-project-skeleton 阶段定义。尚未实现 PRD 7.1.2 所要求的装置四级层级（工厂→装置→单元→隔离点）、隔离点主数据（PID 台账、介质/压力/温度/危害等级）、隔离点位置标注（3D 坐标绑定）、隔离点数据变更管理（审批+历史）。
 

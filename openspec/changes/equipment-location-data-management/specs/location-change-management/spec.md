@@ -1,4 +1,4 @@
-﻿## ADDED Requirements
+## ADDED Requirements
 
 ### Requirement: Location Change Record Entity
 The system SHALL maintain a LocationChangeRecord entity that captures field-level change snapshots for Location and IsolationPointDetail modifications, including change type, applicant, status, and approval metadata.

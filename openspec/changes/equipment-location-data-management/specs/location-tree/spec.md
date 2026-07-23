@@ -1,4 +1,4 @@
-﻿## MODIFIED Requirements
+## MODIFIED Requirements
 
 ### Requirement: Location Tree Structure
 The system SHALL manage blind plate locations in a hierarchical tree structure with four levels: FACTORY → EQUIPMENT → UNIT → ISOLATION_POINT, where FACTORY nodes are root nodes, EQUIPMENT nodes are children of FACTORY nodes, UNIT nodes are children of EQUIPMENT nodes, and ISOLATION_POINT nodes are children of UNIT nodes.

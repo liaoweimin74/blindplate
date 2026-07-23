@@ -1,4 +1,4 @@
-﻿## 1. Backend Data Model
+## 1. Backend Data Model
 
 - [ ] 1.1 Refactor Location entity: add `code` (unique, nullable for non-isolation-point), `level` (int) fields; replace type enum values with FACTORY/EQUIPMENT/UNIT/ISOLATION_POINT
 - [ ] 1.2 Create IsolationPointDetail entity (`bp_isolation_point_detail`): id, location_id FK, pid_diagram_ref, medium, pressure, temperature, hazard_level(A/B/C/D), isolation_type(BLIND_PLATE/DOUBLE_BLOCK/VALVE/OTHER), coord_x, coord_y, coord_z, diagram_id FK to BoardProject, timestamps; @OneToOne cascade ALL with Location

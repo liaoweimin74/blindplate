@@ -1,4 +1,4 @@
-﻿## ADDED Requirements
+## ADDED Requirements
 
 ### Requirement: Isolation Point Detail Entity
 The system SHALL maintain an IsolationPointDetail entity in a 1:1 relationship with ISOLATION_POINT type Location nodes, storing PID diagram reference, medium, pressure, temperature, hazard level, isolation type, three-dimensional coordinates, and associated diagram project ID.
