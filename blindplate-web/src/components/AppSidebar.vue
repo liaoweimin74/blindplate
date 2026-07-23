@@ -10,7 +10,8 @@ import {
   HomeFilled,
   User,
   Setting,
-  Edit
+  Edit,
+  Box
 } from '@element-plus/icons-vue'
 
 const { t } = useI18n()
@@ -20,6 +21,7 @@ const route = useRoute()
 const menuItems = [
 { key: '/dashboard', title: 'menu.dashboard', icon: HomeFilled, path: '/dashboard' },
   { key: '/blindplates', title: 'menu.blindplates', icon: Document, path: '/blindplates' },
+  { key: '/stocktakes', title: 'menu.stocktakes', icon: Box, path: '/stocktakes' },
   { key: '/blindplate-editor', title: 'menu.blindplateEditor', icon: Edit, path: '/blindplate-editor' },
   { key: '/locations', title: 'menu.locations', icon: Location, path: '/locations' },
   { key: '/operations', title: 'menu.operations', icon: List, path: '/operations' },

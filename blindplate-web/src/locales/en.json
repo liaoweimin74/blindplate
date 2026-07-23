@@ -6,6 +6,7 @@
   "menu": {
     "dashboard": "Dashboard",
     "blindplates": "Blind Plates",
+    "stocktakes": "Stocktake",
     "blindplateEditor": "Blind Board Editor",
     "blindplatePreview": "Blind Board Preview",
     "locations": "Locations",
@@ -30,6 +31,8 @@
     "dashboardSubtitle": "System Overview and Statistics",
     "blindplates": "Blind Plates",
     "blindplatesSubtitle": "Manage blind plate inventory",
+    "stocktakes": "Stocktake",
+    "stocktakesSubtitle": "Blind plate stocktake batches and discrepancy reports",
     "blindplateEditor": "Blind Board Editor",
     "blindplateEditorSubtitle": "Drag-and-drop blind board design",
     "blindplatePreview": "Blind Board Preview",

@@ -6,6 +6,7 @@
   "menu": {
     "dashboard": "首页",
     "blindplates": "盲板管理",
+    "stocktakes": "盘点管理",
     "blindplateEditor": "盲板组态",
     "blindplatePreview": "盲板预览",
     "locations": "位置管理",
@@ -30,6 +31,8 @@
     "dashboardSubtitle": "系统概览与统计",
     "blindplates": "盲板管理",
     "blindplatesSubtitle": "管理盲板库存",
+    "stocktakes": "盘点管理",
+    "stocktakesSubtitle": "盲板盘点批次与差异报告",
     "blindplateEditor": "盲板组态",
     "blindplateEditorSubtitle": "拖拽式盲板组态设计",
     "blindplatePreview": "盲板预览",

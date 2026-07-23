@@ -26,6 +26,12 @@ const routes: RouteRecordRaw[] = [
         meta: { requiresAuth: true, titleKey: 'menu.blindplates', closable: true }
       },
       {
+        path: 'stocktakes',
+        name: 'StocktakeList',
+        component: () => import('@/views/blindplate/StocktakeList.vue'),
+        meta: { requiresAuth: true, titleKey: 'menu.stocktakes', closable: true }
+      },
+      {
         path: 'locations',
         name: 'LocationTree',
         component: () => import('@/views/location/LocationTree.vue'),

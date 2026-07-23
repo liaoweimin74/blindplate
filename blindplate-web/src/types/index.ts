@@ -27,13 +27,74 @@ export interface BlindPlate {
   code: string
   name: string
   spec: string
+  modelType: string
   material: string
   diameter: number
   pressure: number
+  thickness: number
   manufacturer: string
+  factoryCode: string
+  purchaseDate: string
+  qrCode: string
+  rfidTag: string
+  currentLocationId: number
+  installCount: number
+  totalUsageDays: number
   status: string
+  lifecycleStatus: string
+  nextInspectionDate: string
   remark: string
   createdAt: string
+}
+
+export interface BlindPlateStatusHistory {
+  id: number
+  blindPlateId: number
+  previousStatus: string
+  newStatus: string
+  operator: string
+  changedAt: string
+}
+
+export interface BlindPlateInspection {
+  id: number
+  blindPlateId: number
+  inspectionDate: string
+  result: string
+  nextInspectionDate: string
+  inspector: string
+  remark: string
+  createdAt: string
+}
+
+export interface BlindPlateScrapRecord {
+  id: number
+  blindPlateId: number
+  applicant: string
+  reason: string
+  status: string
+  applyTime: string
+  approver: string
+  approveTime: string
+  approveComment: string
+}
+
+export interface BlindPlateStocktake {
+  id: number
+  batchNo: string
+  batchName: string
+  operator: string
+  status: string
+  createdAt: string
+  closedAt: string
+}
+
+export interface BlindPlateStocktakeItem {
+  id: number
+  batchId: number
+  blindPlateCode: string
+  scannedAt: string
+  matchStatus: string
 }
 
 export interface Location {

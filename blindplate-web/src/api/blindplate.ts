@@ -1,8 +1,16 @@
 import request from './request'
 import type { BlindPlate } from '@/types'
 
-export function getBlindPlates() {
-  return request.get('/blindplates')
+export function getBlindPlates(params?: {
+  keyword?: string
+  modelType?: string
+  material?: string
+  status?: string
+  lifecycleStatus?: string
+  page?: number
+  size?: number
+}) {
+  return request.get('/blindplates', { params })
 }
 
 export function getBlindPlate(id: number) {
@@ -19,4 +27,12 @@ export function updateBlindPlate(id: number, data: Partial<BlindPlate>) {
 
 export function deleteBlindPlate(id: number) {
   return request.delete(`/blindplates/${id}`)
+}
+
+export function getStatusHistory(id: number) {
+  return request.get(`/blindplates/${id}/status-history`)
+}
+
+export function getInspectionAlerts() {
+  return request.get('/blindplates/inspection-alerts')
 }
