@@ -13,7 +13,9 @@
     "operations": "操作记录",
     "inspections": "巡检记录",
     "users": "用户管理",
-    "settings": "系统设置"
+    "settings": "系统设置",
+    "isolationPointImport": "隔离点导入",
+    "changeApproval": "变更审批"
   },
   "header": {
     "messages": "消息",
@@ -39,6 +41,10 @@
     "blindplatePreviewSubtitle": "组态效果预览",
     "locations": "位置管理",
     "locationsSubtitle": "管理位置层级",
+    "isolationPointImport": "隔离点导入",
+    "isolationPointImportSubtitle": "批量导入隔离点数据",
+    "changeApproval": "变更审批",
+    "changeApprovalSubtitle": "审批位置变更记录",
     "operations": "操作记录",
     "operationsSubtitle": "工单管理",
     "inspections": "巡检记录",
@@ -68,7 +74,12 @@
     "view": "查看",
     "confirm": "确定",
     "yes": "是",
-    "no": "否"
+    "no": "否",
+    "selectFile": "选择文件",
+    "import": "导入",
+    "downloadTemplate": "下载模板",
+    "approve": "审批通过",
+    "reject": "驳回"
   },
   "table": {
     "code": "编号",
@@ -89,7 +100,12 @@
     "locationName": "名称",
     "locationCode": "编码",
     "parent": "上级",
-    "locationType": "类型"
+    "locationType": "类型",
+    "changeType": "变更类型",
+    "fieldChanged": "变更字段",
+    "oldValue": "旧值",
+    "newValue": "新值",
+    "appliedAt": "申请时间"
   },
   "form": {
     "labelCode": "编码",
@@ -142,6 +158,23 @@
     "optionFloor": "楼层",
     "optionRoom": "房间",
     "optionEquipment": "设备",
+    "optionFactory": "工厂",
+    "optionUnit": "单元",
+    "optionIsolationPoint": "隔离点",
+    "optionFlange": "法兰",
+    "optionValve": "阀门",
+    "optionBlindPlate": "盲板",
+    "optionFigure8": "8字盲板",
+    "isolationPointDetail": "隔离点详情",
+    "labelMedium": "介质",
+    "labelHazardLevel": "危害等级",
+    "labelIsolationType": "隔离方式",
+    "labelPressure": "压力（MPa）",
+    "labelTemperature": "温度（℃）",
+    "enterMedium": "请输入介质",
+    "selectHazardLevel": "请选择危害等级",
+    "selectIsolationType": "请选择隔离方式",
+    "enterComment": "请输入审批意见",
     "optionInstall": "安装",
     "optionRemove": "拆除",
     "optionInspect": "巡检",
@@ -173,7 +206,9 @@
     "createInspection": "新增计划",
     "editInspection": "编辑计划",
     "addUser": "新增用户",
-    "editUser": "编辑用户"
+    "editUser": "编辑用户",
+    "approveConfirm": "审批确认",
+    "rejectConfirm": "驳回确认"
   },
   "descriptions": {
     "name": "名称",
@@ -183,7 +218,7 @@
     "description": "描述",
     "root": "根节点"
   },
-  "filter": {
+    "filter": {
     "all": "全部",
     "pending": "待处理",
     "inProgress": "进行中",
@@ -191,7 +226,9 @@
     "cancelled": "已取消",
     "daily": "每日",
     "weekly": "每周",
-    "monthly": "每月"
+    "monthly": "每月",
+    "approved": "已审批",
+    "rejected": "已驳回"
   },
   "confirm": {
     "deleteTitle": "确认删除",
@@ -216,7 +253,14 @@
     "passwordReset": "密码重置成功",
     "settingsSaved": "设置保存成功",
     "profileComing": "账号信息功能开发中",
-    "helpComing": "帮助中心开发中"
+    "helpComing": "帮助中心开发中",
+    "importSuccess": "导入成功",
+    "importWithErrors": "导入完成，{count}条错误",
+    "excelOnly": "仅支持 .xlsx / .xls 文件",
+    "oneFileOnly": "只能上传一个文件",
+    "featureComing": "功能开发中",
+    "approved": "审批通过",
+    "rejected": "已驳回"
   },
   "tag": {
     "active": "启用",
@@ -235,7 +279,12 @@
     "paused": "已暂停",
     "install": "安装",
     "remove": "拆除",
-    "inspect": "巡检"
+    "inspect": "巡检",
+    "create": "新增",
+    "update": "修改",
+    "delete2": "删除",
+    "approved": "已审批",
+    "rejected": "已驳回"
   },
   "placeholder": {
     "searchByCode": "按编号或名称搜索",

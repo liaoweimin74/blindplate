@@ -11,7 +11,9 @@ import {
   User,
   Setting,
   Edit,
-  Box
+  Box,
+  Upload,
+  Stamp
 } from '@element-plus/icons-vue'
 
 const { t } = useI18n()
@@ -24,6 +26,8 @@ const menuItems = [
   { key: '/stocktakes', title: 'menu.stocktakes', icon: Box, path: '/stocktakes' },
   { key: '/blindplate-editor', title: 'menu.blindplateEditor', icon: Edit, path: '/blindplate-editor' },
   { key: '/locations', title: 'menu.locations', icon: Location, path: '/locations' },
+  { key: '/isolation-point-import', title: 'menu.isolationPointImport', icon: Upload, path: '/isolation-point-import' },
+  { key: '/change-approval', title: 'menu.changeApproval', icon: Stamp, path: '/change-approval' },
   { key: '/operations', title: 'menu.operations', icon: List, path: '/operations' },
   { key: '/inspections', title: 'menu.inspections', icon: DataAnalysis, path: '/inspections' },
   { key: '/users', title: 'menu.users', icon: User, path: '/users' },

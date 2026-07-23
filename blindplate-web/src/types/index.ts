@@ -104,8 +104,35 @@ export interface Location {
   code: string
   description: string
   type: string
+  level?: number
   parentName?: string
   children?: Location[]
+  isolationPointDetail?: IsolationPointDetail
+}
+
+export interface IsolationPointDetail {
+  id?: number
+  locationId?: number
+  medium: string
+  hazardLevel: string
+  isolationType: string
+  pressure?: number
+  temperature?: number
+}
+
+export interface LocationChangeRecord {
+  id: number
+  locationId: number
+  changeType: string
+  fieldChanged: string
+  oldValue: string
+  newValue: string
+  applicantId: number
+  approverId?: number
+  status: string
+  appliedAt: string
+  approvedAt?: string
+  createdAt: string
 }
 
 export interface OperationOrder {

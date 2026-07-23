@@ -55,7 +55,13 @@
             <el-descriptions :column="2" border>
               <el-descriptions-item :label="$t('descriptions.name')">{{ selectedNode.name }}</el-descriptions-item>
               <el-descriptions-item :label="$t('descriptions.code')">{{ selectedNode.code }}</el-descriptions-item>
-              <el-descriptions-item :label="$t('descriptions.type')">{{ selectedNode.type }}</el-descriptions-item>
+              <el-descriptions-item :label="$t('descriptions.type')">
+                <el-tag v-if="selectedNode.type === 'FACTORY'" type="primary">{{ $t('form.optionFactory') }}</el-tag>
+                <el-tag v-else-if="selectedNode.type === 'EQUIPMENT'" type="success">{{ $t('form.optionEquipment') }}</el-tag>
+                <el-tag v-else-if="selectedNode.type === 'UNIT'" type="warning">{{ $t('form.optionUnit') }}</el-tag>
+                <el-tag v-else-if="selectedNode.type === 'ISOLATION_POINT'" type="danger">{{ $t('form.optionIsolationPoint') }}</el-tag>
+                <el-tag v-else>{{ selectedNode.type }}</el-tag>
+              </el-descriptions-item>
               <el-descriptions-item :label="$t('descriptions.parent')">{{ selectedNode.parentName || $t('descriptions.root') }}</el-descriptions-item>
               <el-descriptions-item :label="$t('descriptions.description')" :span="2">{{ selectedNode.description || 'N/A' }}</el-descriptions-item>
             </el-descriptions>

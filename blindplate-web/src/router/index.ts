@@ -38,6 +38,18 @@ const routes: RouteRecordRaw[] = [
         meta: { requiresAuth: true, titleKey: 'menu.locations', closable: true }
       },
       {
+        path: 'isolation-point-import',
+        name: 'IsolationPointImport',
+        component: () => import('@/views/location/IsolationPointImport.vue'),
+        meta: { requiresAuth: true, titleKey: 'menu.isolationPointImport', closable: true }
+      },
+      {
+        path: 'change-approval',
+        name: 'ChangeApproval',
+        component: () => import('@/views/location/ChangeApproval.vue'),
+        meta: { requiresAuth: true, titleKey: 'menu.changeApproval', closable: true }
+      },
+      {
         path: 'operations',
         name: 'OperationList',
         component: () => import('@/views/operation/OperationList.vue'),

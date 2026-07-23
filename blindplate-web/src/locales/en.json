@@ -13,7 +13,9 @@
     "operations": "Operations",
     "inspections": "Inspections",
     "users": "Users",
-    "settings": "Settings"
+    "settings": "Settings",
+    "isolationPointImport": "Isolation Point Import",
+    "changeApproval": "Change Approval"
   },
   "header": {
     "messages": "Messages",
@@ -39,6 +41,10 @@
     "blindplatePreviewSubtitle": "Preview blind board design",
     "locations": "Locations",
     "locationsSubtitle": "Manage location hierarchy",
+    "isolationPointImport": "Isolation Point Import",
+    "isolationPointImportSubtitle": "Batch import isolation point data",
+    "changeApproval": "Change Approval",
+    "changeApprovalSubtitle": "Approve location change records",
     "operations": "Operations",
     "operationsSubtitle": "Work order management",
     "inspections": "Inspections",
@@ -68,7 +74,12 @@
     "view": "View",
     "confirm": "Confirm",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "selectFile": "Select File",
+    "import": "Import",
+    "downloadTemplate": "Download Template",
+    "approve": "Approve",
+    "reject": "Reject"
   },
   "table": {
     "code": "Code",
@@ -89,7 +100,12 @@
     "locationName": "Name",
     "locationCode": "Code",
     "parent": "Parent",
-    "locationType": "Type"
+    "locationType": "Type",
+    "changeType": "Change Type",
+    "fieldChanged": "Field Changed",
+    "oldValue": "Old Value",
+    "newValue": "New Value",
+    "appliedAt": "Applied At"
   },
   "form": {
     "labelCode": "Code",
@@ -142,6 +158,23 @@
     "optionFloor": "Floor",
     "optionRoom": "Room",
     "optionEquipment": "Equipment",
+    "optionFactory": "Factory",
+    "optionUnit": "Unit",
+    "optionIsolationPoint": "Isolation Point",
+    "optionFlange": "Flange",
+    "optionValve": "Valve",
+    "optionBlindPlate": "Blind Plate",
+    "optionFigure8": "Figure-8 Blind Plate",
+    "isolationPointDetail": "Isolation Point Detail",
+    "labelMedium": "Medium",
+    "labelHazardLevel": "Hazard Level",
+    "labelIsolationType": "Isolation Type",
+    "labelPressure": "Pressure (MPa)",
+    "labelTemperature": "Temperature (℃)",
+    "enterMedium": "Please enter medium",
+    "selectHazardLevel": "Please select hazard level",
+    "selectIsolationType": "Please select isolation type",
+    "enterComment": "Please enter approval comment",
     "optionInstall": "Install",
     "optionRemove": "Remove",
     "optionInspect": "Inspect",
@@ -173,7 +206,9 @@
     "createInspection": "Create Inspection Plan",
     "editInspection": "Edit Inspection Plan",
     "addUser": "Add User",
-    "editUser": "Edit User"
+    "editUser": "Edit User",
+    "approveConfirm": "Approve Confirmation",
+    "rejectConfirm": "Reject Confirmation"
   },
   "descriptions": {
     "name": "Name",
@@ -191,7 +226,9 @@
     "cancelled": "Cancelled",
     "daily": "Daily",
     "weekly": "Weekly",
-    "monthly": "Monthly"
+    "monthly": "Monthly",
+    "approved": "Approved",
+    "rejected": "Rejected"
   },
   "confirm": {
     "deleteTitle": "Confirm Delete",
@@ -216,7 +253,14 @@
     "passwordReset": "Password reset successfully",
     "settingsSaved": "Settings saved successfully",
     "profileComing": "Profile page coming soon",
-    "helpComing": "Help center coming soon"
+    "helpComing": "Help center coming soon",
+    "importSuccess": "Import successful",
+    "importWithErrors": "Import completed with {count} errors",
+    "excelOnly": "Only .xlsx / .xls files are supported",
+    "oneFileOnly": "Only one file can be uploaded",
+    "featureComing": "Feature coming soon",
+    "approved": "Approved",
+    "rejected": "Rejected"
   },
   "tag": {
     "active": "Active",
@@ -235,7 +279,12 @@
     "paused": "Paused",
     "install": "Install",
     "remove": "Remove",
-    "inspect": "Inspect"
+    "inspect": "Inspect",
+    "create": "Create",
+    "update": "Update",
+    "delete2": "Delete",
+    "approved": "Approved",
+    "rejected": "Rejected"
   },
   "placeholder": {
     "searchByCode": "Search by code or name",
