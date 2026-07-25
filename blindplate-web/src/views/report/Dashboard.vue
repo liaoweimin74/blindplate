@@ -90,7 +90,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import request from '@/api/request'
 import { Document, List, DataAnalysis, Location } from '@element-plus/icons-vue'
 
 const stats = ref<any>({
@@ -102,8 +102,8 @@ const stats = ref<any>({
 
 async function fetchStats() {
   try {
-    const res: any = await axios.get('/api/v1/reports/statistics')
-    stats.value = res.data.data
+    const res: any = await request.get('/reports/statistics')
+    stats.value = res.data
   } catch (e) {
     console.error('Failed to fetch statistics', e)
   }

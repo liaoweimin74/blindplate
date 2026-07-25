@@ -1,0 +1,165 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - button [ref=e6] [cursor=pointer]:
+        - img [ref=e8]
+      - generic [ref=e10]: 盲板管理系统
+    - generic [ref=e11]:
+      - button [ref=e13] [cursor=pointer]:
+        - img [ref=e15]
+      - button "系统管理员" [ref=e20] [cursor=pointer]:
+        - img [ref=e22]
+        - generic [ref=e24]: 系统管理员
+  - generic [ref=e25]:
+    - complementary [ref=e26]:
+      - menubar [ref=e30]:
+        - menuitem "首页" [ref=e31] [cursor=pointer]:
+          - img [ref=e33]
+          - text: 首页
+        - menuitem "盲板管理" [ref=e35] [cursor=pointer]:
+          - img [ref=e37]
+          - text: 盲板管理
+        - menuitem "盘点管理" [ref=e39] [cursor=pointer]:
+          - img [ref=e41]
+          - text: 盘点管理
+        - menuitem "盲板组态" [ref=e45] [cursor=pointer]:
+          - img [ref=e47]
+          - text: 盲板组态
+        - menuitem "位置管理" [ref=e50] [cursor=pointer]:
+          - img [ref=e52]
+          - text: 位置管理
+        - menuitem "隔离点导入" [ref=e55] [cursor=pointer]:
+          - img [ref=e57]
+          - text: 隔离点导入
+        - menuitem "变更审批" [ref=e59] [cursor=pointer]:
+          - img [ref=e61]
+          - text: 变更审批
+        - menuitem "通盲状态台账" [ref=e63] [cursor=pointer]:
+          - img [ref=e65]
+          - text: 通盲状态台账
+        - menuitem "操作记录" [ref=e67] [cursor=pointer]:
+          - img [ref=e69]
+          - text: 操作记录
+        - menuitem "巡检记录" [ref=e71] [cursor=pointer]:
+          - img [ref=e73]
+          - text: 巡检记录
+        - menuitem "用户管理" [ref=e75] [cursor=pointer]:
+          - img [ref=e77]
+          - text: 用户管理
+        - menuitem "系统设置" [ref=e79] [cursor=pointer]:
+          - img [ref=e81]
+          - text: 系统设置
+    - main [ref=e87]:
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - heading "盲板管理" [level=1] [ref=e90]
+          - paragraph [ref=e91]: 管理盲板库存
+        - generic [ref=e92]:
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - generic [ref=e97]:
+                - img [ref=e100]
+                - textbox "搜索编号/名称/规格" [ref=e102]
+              - generic [ref=e105] [cursor=pointer]:
+                - generic:
+                  - combobox [ref=e107]
+                  - generic [ref=e108]: 型号
+                - img [ref=e111]
+              - generic [ref=e114] [cursor=pointer]:
+                - generic:
+                  - combobox [ref=e116]
+                  - generic [ref=e117]: 状态
+                - img [ref=e120]
+              - generic [ref=e123] [cursor=pointer]:
+                - generic:
+                  - combobox [ref=e125]
+                  - generic [ref=e126]: 生命周期
+                - img [ref=e129]
+            - button "新增盲板" [ref=e132] [cursor=pointer]:
+              - generic [ref=e133]:
+                - img [ref=e135]
+                - text: 新增盲板
+          - generic [ref=e137]:
+            - generic [ref=e138]:
+              - generic [ref=e139]:
+                - table [ref=e141]:
+                  - rowgroup [ref=e153]:
+                    - row "编号 名称 型号 规格 材质 状态 生命周期 下次检验 二维码 操作" [ref=e154]:
+                      - columnheader "编号" [ref=e155]:
+                        - generic [ref=e156]: 编号
+                      - columnheader "名称" [ref=e157]:
+                        - generic [ref=e158]: 名称
+                      - columnheader "型号" [ref=e159]:
+                        - generic [ref=e160]: 型号
+                      - columnheader "规格" [ref=e161]:
+                        - generic [ref=e162]: 规格
+                      - columnheader "材质" [ref=e163]:
+                        - generic [ref=e164]: 材质
+                      - columnheader "状态" [ref=e165]:
+                        - generic [ref=e166]: 状态
+                      - columnheader "生命周期" [ref=e167]:
+                        - generic [ref=e168]: 生命周期
+                      - columnheader "下次检验" [ref=e169]:
+                        - generic [ref=e170]: 下次检验
+                      - columnheader "二维码" [ref=e171]:
+                        - generic [ref=e172]: 二维码
+                      - columnheader "操作" [ref=e173]:
+                        - generic [ref=e174]: 操作
+                - table [ref=e179]:
+                  - rowgroup [ref=e191]:
+                    - row "32323 3232 8字盲板 32323 3232 在库 正常 BP-20260723-000001 详情 编辑 删除" [ref=e192]:
+                      - cell "32323" [ref=e193]:
+                        - generic [ref=e194]: "32323"
+                      - cell "3232" [ref=e195]:
+                        - generic [ref=e196]: "3232"
+                      - cell "8字盲板" [ref=e197]:
+                        - generic [ref=e198]: 8字盲板
+                      - cell "32323" [ref=e199]:
+                        - generic [ref=e200]: "32323"
+                      - cell "3232" [ref=e201]:
+                        - generic [ref=e202]: "3232"
+                      - cell "在库" [ref=e203]:
+                        - generic [ref=e204]:
+                          - generic:
+                            - generic: 在库
+                      - cell "正常" [ref=e205]:
+                        - generic [ref=e206]:
+                          - generic:
+                            - generic: 正常
+                      - cell [ref=e207]
+                      - cell "BP-20260723-000001" [ref=e208]:
+                        - generic [ref=e209]: BP-20260723-000001
+                      - cell "详情 编辑 删除" [ref=e210]:
+                        - generic [ref=e211]:
+                          - button "详情" [ref=e212] [cursor=pointer]:
+                            - generic [ref=e213]:
+                              - img [ref=e215]
+                              - text: 详情
+                          - button "编辑" [ref=e217] [cursor=pointer]:
+                            - generic [ref=e218]:
+                              - img [ref=e220]
+                              - text: 编辑
+                          - button "删除" [ref=e223] [cursor=pointer]:
+                            - generic [ref=e224]:
+                              - img [ref=e226]
+                              - text: 删除
+              - img [ref=e230]
+            - generic [ref=e233]:
+              - generic [ref=e234]: 共 1 条
+              - generic [ref=e237] [cursor=pointer]:
+                - generic:
+                  - combobox [ref=e239]
+                  - generic [ref=e240]: 20条/页
+                - img [ref=e243]
+              - button "上一页" [disabled] [ref=e245]:
+                - generic:
+                  - img
+              - list [ref=e246]:
+                - listitem "第 1 页" [ref=e247]: "1"
+              - button "下一页" [disabled] [ref=e248]:
+                - generic:
+                  - img
+              - generic [ref=e249]:
+                - generic [ref=e250]: 前往
+                - spinbutton "页" [ref=e253]: "1"
+                - generic [ref=e254]: 页

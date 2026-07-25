@@ -1,0 +1,9 @@
+- generic [ref=e4]:
+  - generic [ref=e5]:
+    - heading "盲板管理系统" [level=1] [ref=e6]
+    - paragraph [ref=e7]: 工业安全管理系统
+  - generic [ref=e8]:
+    - textbox "请输入用户名" [ref=e14]
+    - textbox "请输入密码" [ref=e20]
+    - button "登录" [ref=e23] [cursor=pointer]:
+      - generic [ref=e24]: 登录

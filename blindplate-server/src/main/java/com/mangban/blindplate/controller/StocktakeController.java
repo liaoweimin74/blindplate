@@ -18,34 +18,34 @@ public class StocktakeController {
 
     private final StocktakeService stocktakeService;
 
-    @PostMapping("/api/v1/blindplates/stocktake")
+    @PostMapping("/api/v1/stocktakes")
     public Result<BlindPlateStocktake> createBatch(@RequestBody Map<String, String> body) {
         return Result.success(stocktakeService.createBatch(body.get("batchName"), body.get("operator")));
     }
 
-    @PostMapping("/api/v1/blindplates/stocktake/{batchId}/scan")
-    public Result<List<BlindPlateStocktakeItem>> scanCodes(@PathVariable Long batchId,
+    @PostMapping("/api/v1/stocktakes/{id}/scan")
+    public Result<List<BlindPlateStocktakeItem>> scanCodes(@PathVariable Long id,
                                                             @RequestBody Map<String, List<String>> body) {
-        return Result.success(stocktakeService.scanCodes(batchId, body.get("codes")));
+        return Result.success(stocktakeService.scanCodes(id, body.get("codes")));
     }
 
-    @PutMapping("/api/v1/blindplates/stocktake/{batchId}/close")
-    public Result<BlindPlateStocktake> closeBatch(@PathVariable Long batchId) {
-        return Result.success(stocktakeService.closeBatch(batchId));
+    @PostMapping("/api/v1/stocktakes/{id}/close")
+    public Result<BlindPlateStocktake> closeBatch(@PathVariable Long id) {
+        return Result.success(stocktakeService.closeBatch(id));
     }
 
-    @GetMapping("/api/v1/blindplates/stocktake")
+    @GetMapping("/api/v1/stocktakes")
     public Result<Page<BlindPlateStocktake>> list(Pageable pageable) {
         return Result.success(stocktakeService.findAll(pageable));
     }
 
-    @GetMapping("/api/v1/blindplates/stocktake/{batchId}")
-    public Result<BlindPlateStocktake> getById(@PathVariable Long batchId) {
-        return Result.success(stocktakeService.findById(batchId));
+    @GetMapping("/api/v1/stocktakes/{id}")
+    public Result<BlindPlateStocktake> getById(@PathVariable Long id) {
+        return Result.success(stocktakeService.findById(id));
     }
 
-    @GetMapping("/api/v1/blindplates/stocktake/{batchId}/items")
-    public Result<List<BlindPlateStocktakeItem>> getItems(@PathVariable Long batchId) {
-        return Result.success(stocktakeService.getItems(batchId));
+    @GetMapping("/api/v1/stocktakes/{id}/items")
+    public Result<List<BlindPlateStocktakeItem>> getItems(@PathVariable Long id) {
+        return Result.success(stocktakeService.getItems(id));
     }
 }

@@ -21,6 +21,10 @@ public class LocationService {
     private final IsolationPointDetailRepository isolationPointDetailRepository;
     private final LocationChangeRecordService changeRecordService;
 
+    public List<Location> findAll() {
+        return locationRepository.findAll();
+    }
+
     public List<Location> getTree() {
         List<Location> roots = locationRepository.findByParentIdIsNull();
         roots.forEach(this::loadChildren);

@@ -1,7 +1,7 @@
 ﻿<script setup lang="ts">
 import { ref, watch, onMounted, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import axios from 'axios'
+import request from '@/api/request'
 import type { FormInstance, FormRules } from 'element-plus'
 import type { Location, IsolationPointDetail } from '@/types'
 
@@ -67,8 +67,8 @@ const isolationTypeOptions = [
 
 async function fetchParentOptions() {
   try {
-    const res: any = await axios.get('/api/v1/locations/tree')
-    parentOptions.value = flattenTree(res.data.data)
+    const res: any = await request.get('/locations/tree')
+    parentOptions.value = flattenTree(res.data)
   } catch (e) { console.error(e) }
 }
 

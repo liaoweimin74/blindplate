@@ -1,0 +1,12 @@
+[     208ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/api/v1/locations/change-records:0
+[     213ms] [WARNING] Unhandled error during execution of mounted hook Proxy(Object) at <ChangeApproval>
+at <KeepAlive>
+at <RouterView>
+at <ElMain>
+at <AppLayout>
+at <RouterView>
+at <ElConfigProvider>
+at <App> [Object, Object, Object, Object, Object, Object, Object, Object] @ http://localhost:3000/node_modules/.vite/deps/element-plus.js?v=9dd98474:25327
+[     221ms] AxiosError: Request failed with status code 500
+    at settle (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1534:12)
+    at XMLHttpRequest.onloadend (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1997:7)

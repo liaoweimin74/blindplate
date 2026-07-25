@@ -48,6 +48,8 @@ const routes: RouteRecordRaw[] = [
         name: 'ChangeApproval',
         component: () => import('@/views/location/ChangeApproval.vue'),
         meta: { requiresAuth: true, titleKey: 'menu.changeApproval', closable: true }
+      },
+      {
         path: 'blind-spot-status',
         name: 'BlindSpotStatusList',
         component: () => import('@/views/blindspotstatus/BlindSpotStatusList.vue'),

@@ -1,0 +1,77 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - button [ref=e6] [cursor=pointer]:
+        - img [ref=e8]
+      - generic [ref=e10]: 盲板管理系统
+    - generic [ref=e11]:
+      - button [ref=e13] [cursor=pointer]:
+        - img [ref=e15]
+      - button "系统管理员" [ref=e20] [cursor=pointer]:
+        - img [ref=e22]
+        - generic [ref=e24]: 系统管理员
+  - generic [ref=e25]:
+    - complementary [ref=e26]:
+      - menubar [ref=e30]:
+        - menuitem "首页" [ref=e31] [cursor=pointer]:
+          - img [ref=e33]
+          - text: 首页
+        - menuitem "盲板管理" [ref=e35] [cursor=pointer]:
+          - img [ref=e37]
+          - text: 盲板管理
+        - menuitem "盘点管理" [ref=e39] [cursor=pointer]:
+          - img [ref=e41]
+          - text: 盘点管理
+        - menuitem "盲板组态" [ref=e45] [cursor=pointer]:
+          - img [ref=e47]
+          - text: 盲板组态
+        - menuitem "位置管理" [ref=e50] [cursor=pointer]:
+          - img [ref=e52]
+          - text: 位置管理
+        - menuitem "隔离点导入" [ref=e55] [cursor=pointer]:
+          - img [ref=e57]
+          - text: 隔离点导入
+        - menuitem "变更审批" [ref=e59] [cursor=pointer]:
+          - img [ref=e61]
+          - text: 变更审批
+        - menuitem "通盲状态台账" [ref=e63] [cursor=pointer]:
+          - img [ref=e65]
+          - text: 通盲状态台账
+        - menuitem "操作记录" [ref=e67] [cursor=pointer]:
+          - img [ref=e69]
+          - text: 操作记录
+        - menuitem "巡检记录" [ref=e71] [cursor=pointer]:
+          - img [ref=e73]
+          - text: 巡检记录
+        - menuitem "用户管理" [ref=e75] [cursor=pointer]:
+          - img [ref=e77]
+          - text: 用户管理
+        - menuitem "系统设置" [ref=e79] [cursor=pointer]:
+          - img [ref=e81]
+          - text: 系统设置
+    - main [ref=e87]:
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - heading "隔离点导入" [level=1] [ref=e90]
+          - paragraph [ref=e91]: 批量导入隔离点数据
+        - generic [ref=e93]:
+          - generic [ref=e94]:
+            - button "选择文件" [ref=e95] [cursor=pointer]:
+              - button "选择文件" [ref=e96]:
+                - generic [ref=e97]:
+                  - img [ref=e99]
+                  - text: 选择文件
+            - generic [ref=e101]: 仅支持 .xlsx / .xls 文件
+            - list
+          - generic [ref=e102]:
+            - button "导入" [disabled] [ref=e103]:
+              - generic [ref=e104]: 导入
+            - button "下载模板" [ref=e105] [cursor=pointer]:
+              - generic [ref=e106]:
+                - img [ref=e108]
+                - text: 下载模板
+          - alert [ref=e110]:
+            - img [ref=e112]
+            - generic [ref=e114]:
+              - generic [ref=e115]: 导入成功
+              - img [ref=e117] [cursor=pointer]

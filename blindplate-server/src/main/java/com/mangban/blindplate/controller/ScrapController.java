@@ -17,22 +17,23 @@ public class ScrapController {
 
     private final ScrapService scrapService;
 
-    @PostMapping("/api/v1/blindplates/{id}/scrap")
-    public Result<BlindPlateScrapRecord> submitScrap(@PathVariable Long id, @RequestBody Map<String, Object> body) {
+    @PostMapping("/api/v1/scraps")
+    public Result<BlindPlateScrapRecord> submitScrap(@RequestBody Map<String, Object> body) {
+        Long blindPlateId = ((Number) body.get("blindPlateId")).longValue();
         String applicant = (String) body.get("applicant");
         String reason = (String) body.get("reason");
-        return Result.success(scrapService.submitScrap(id, applicant, reason));
+        return Result.success(scrapService.submitScrap(blindPlateId, applicant, reason));
     }
 
-    @PutMapping("/api/v1/blindplates/scrap/{scrapId}/approve")
-    public Result<BlindPlateScrapRecord> approveScrap(@PathVariable Long scrapId, @RequestBody Map<String, Object> body) {
+    @PostMapping("/api/v1/scraps/{id}/approve")
+    public Result<BlindPlateScrapRecord> approveScrap(@PathVariable Long id, @RequestBody Map<String, Object> body) {
         boolean approved = (boolean) body.get("approved");
         String approver = (String) body.get("approver");
         String comment = (String) body.getOrDefault("comment", "");
-        return Result.success(scrapService.approveScrap(scrapId, approved, approver, comment));
+        return Result.success(scrapService.approveScrap(id, approved, approver, comment));
     }
 
-    @GetMapping("/api/v1/blindplates/scrap")
+    @GetMapping("/api/v1/scraps")
     public Result<Page<BlindPlateScrapRecord>> list(
             @RequestParam(required = false) String status,
             @RequestParam(required = false) String applicant,
@@ -40,8 +41,8 @@ public class ScrapController {
         return Result.success(scrapService.findAll(status, applicant, pageable));
     }
 
-    @GetMapping("/api/v1/blindplates/{id}/scrap")
-    public Result<List<BlindPlateScrapRecord>> getByBlindPlateId(@PathVariable Long id) {
-        return Result.success(scrapService.findByBlindPlateId(id));
+    @GetMapping("/api/v1/scraps/by-plate/{blindPlateId}")
+    public Result<List<BlindPlateScrapRecord>> getByBlindPlateId(@PathVariable Long blindPlateId) {
+        return Result.success(scrapService.findByBlindPlateId(blindPlateId));
     }
 }

@@ -1,0 +1,20 @@
+[    1036ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://localhost:3000/api/v1/blindplates:0
+[    1037ms] [ERROR] AxiosError: Request failed with status code 403
+    at settle (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1534:12)
+    at XMLHttpRequest.onloadend (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1997:7)
+    at Axios.request (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:2930:41)
+    at async Promise.all (index 0)
+    at async fetchOptions (http://localhost:3000/src/components/OperationForm.vue:30:33) @ http://localhost:3000/src/components/OperationForm.vue:33
+[    1038ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://localhost:3000/api/v1/locations/tree:0
+[    1039ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://localhost:3000/api/v1/operations:0
+[    1042ms] [WARNING] Unhandled error during execution of mounted hook Proxy(Object) at <OperationList>
+at <KeepAlive>
+at <RouterView>
+at <ElMain>
+at <AppLayout>
+at <RouterView>
+at <ElConfigProvider>
+at <App> [Object, Object, Object, Object, Object, Object, Object, Object] @ http://localhost:3000/node_modules/.vite/deps/element-plus.js?v=9dd98474:25327
+[    1045ms] AxiosError: Request failed with status code 403
+    at settle (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1534:12)
+    at XMLHttpRequest.onloadend (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1997:7)

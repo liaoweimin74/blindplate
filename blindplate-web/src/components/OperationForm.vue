@@ -1,7 +1,7 @@
 ﻿<script setup lang="ts">
 import { ref, watch, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-import axios from 'axios'
+import request from '@/api/request'
 import type { FormInstance, FormRules } from 'element-plus'
 import type { BlindPlate } from '@/types'
 import type { Location } from '@/types'
@@ -26,9 +26,9 @@ const rules: FormRules = {
 
 async function fetchOptions() {
   try {
-    const [bpRes, locRes]: any[] = await Promise.all([axios.get('/api/v1/blindplates'), axios.get('/api/v1/locations/tree')])
-    blindPlateOptions.value = bpRes.data.data || []
-    locationOptions.value = flattenTree(locRes.data.data || [])
+    const [bpRes, locRes]: any[] = await Promise.all([request.get('/blindplates'), request.get('/locations/tree')])
+    blindPlateOptions.value = bpRes.data || []
+    locationOptions.value = flattenTree(locRes.data || [])
   } catch (e) { console.error(e) }
 }
 

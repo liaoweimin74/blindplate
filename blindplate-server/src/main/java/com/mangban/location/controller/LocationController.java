@@ -15,6 +15,11 @@ public class LocationController {
 
     private final LocationService locationService;
 
+    @GetMapping
+    public Result<List<Location>> list() {
+        return Result.success(locationService.findAll());
+    }
+
     @GetMapping("/tree")
     public Result<List<Location>> getTree() {
         return Result.success(locationService.getTree());

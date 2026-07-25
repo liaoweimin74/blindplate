@@ -1,0 +1,91 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - button [ref=e6] [cursor=pointer]:
+        - img [ref=e8]
+      - generic [ref=e10]: 盲板管理系统
+    - generic [ref=e11]:
+      - button [ref=e13] [cursor=pointer]:
+        - img [ref=e15]
+      - button "系统管理员" [ref=e20] [cursor=pointer]:
+        - img [ref=e22]
+        - generic [ref=e24]: 系统管理员
+  - generic [ref=e25]:
+    - complementary [ref=e26]:
+      - menubar [ref=e30]:
+        - menuitem "首页" [ref=e31] [cursor=pointer]:
+          - img [ref=e33]
+          - text: 首页
+        - menuitem "盲板管理" [ref=e35] [cursor=pointer]:
+          - img [ref=e37]
+          - text: 盲板管理
+        - menuitem "盘点管理" [ref=e39] [cursor=pointer]:
+          - img [ref=e41]
+          - text: 盘点管理
+        - menuitem "盲板组态" [ref=e45] [cursor=pointer]:
+          - img [ref=e47]
+          - text: 盲板组态
+        - menuitem "位置管理" [ref=e50] [cursor=pointer]:
+          - img [ref=e52]
+          - text: 位置管理
+        - menuitem "隔离点导入" [ref=e55] [cursor=pointer]:
+          - img [ref=e57]
+          - text: 隔离点导入
+        - menuitem "变更审批" [ref=e59] [cursor=pointer]:
+          - img [ref=e61]
+          - text: 变更审批
+        - menuitem "通盲状态台账" [ref=e63] [cursor=pointer]:
+          - img [ref=e65]
+          - text: 通盲状态台账
+        - menuitem "操作记录" [ref=e67] [cursor=pointer]:
+          - img [ref=e69]
+          - text: 操作记录
+        - menuitem "巡检记录" [ref=e71] [cursor=pointer]:
+          - img [ref=e73]
+          - text: 巡检记录
+        - menuitem "用户管理" [ref=e75] [cursor=pointer]:
+          - img [ref=e77]
+          - text: 用户管理
+        - menuitem "系统设置" [ref=e79] [cursor=pointer]:
+          - img [ref=e81]
+          - text: 系统设置
+    - main [ref=e87]:
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - heading "巡检记录" [level=1] [ref=e90]
+          - paragraph [ref=e91]: 巡检计划管理
+        - generic [ref=e92]:
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - generic [ref=e97]:
+                - img [ref=e100]
+                - textbox "按计划名称搜索" [ref=e102]
+              - generic [ref=e105] [cursor=pointer]:
+                - generic:
+                  - combobox [ref=e107]
+                  - generic [ref=e108]: 选择频率
+                - img [ref=e111]
+            - button "新增计划" [ref=e114] [cursor=pointer]:
+              - generic [ref=e115]:
+                - img [ref=e117]
+                - text: 新增计划
+          - generic [ref=e120]:
+            - generic [ref=e121]:
+              - table [ref=e123]:
+                - rowgroup [ref=e130]:
+                  - row "计划名称 频率 状态 下次执行 操作" [ref=e131]:
+                    - columnheader "计划名称" [ref=e132]:
+                      - generic [ref=e133]: 计划名称
+                    - columnheader "频率" [ref=e134]:
+                      - generic [ref=e135]: 频率
+                    - columnheader "状态" [ref=e136]:
+                      - generic [ref=e137]: 状态
+                    - columnheader "下次执行" [ref=e138]:
+                      - generic [ref=e139]: 下次执行
+                    - columnheader "操作" [ref=e140]:
+                      - generic [ref=e141]: 操作
+              - generic [ref=e145]:
+                - table:
+                  - rowgroup
+                - generic [ref=e147]: 暂无数据
+            - img [ref=e150]

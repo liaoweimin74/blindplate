@@ -1,0 +1,406 @@
+[     170ms] [ERROR] Failed to load resource: the server responded with a status of 403 (Forbidden) @ http://localhost:3000/api/v1/reports/statistics:0
+[     171ms] [ERROR] Failed to fetch statistics AxiosError: Request failed with status code 403
+    at settle (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1534:12)
+    at XMLHttpRequest.onloadend (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1997:7) @ http://localhost:3000/src/views/report/Dashboard.vue:19
+[  674884ms] [ERROR] Failed to fetch statistics ReferenceError: axios is not defined
+    at fetchStats (http://localhost:3000/src/views/report/Dashboard.vue?t=1784787352008:16:21)
+    at http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:5340:40
+    at callWithErrorHandling (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:2377:19)
+    at callWithAsyncErrorHandling (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:2384:17)
+    at hook.__weh.hook.__weh (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:5320:19)
+    at flushPostFlushCbs (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:2562:28)
+    at flushJobs (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:2604:5) @ http://localhost:3000/src/views/report/Dashboard.vue?t=1784787352008:18
+[ 2503244ms] [WARNING] ElementPlusError: [ElOnlyChild] no valid child node found
+    at hs (http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:3920:23)
+    at Proxy.<anonymous> (http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:8087:61)
+    at renderComponentRoot (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:6814:17)
+    at ReactiveEffect.componentUpdateFn [as fn] (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8392:46)
+    at ReactiveEffect.run (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:532:19)
+    at setupRenderEffect (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8527:5)
+    at mountComponent (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8299:7)
+    at processComponent (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8251:9)
+    at patch (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:7743:11)
+    at ReactiveEffect.componentUpdateFn [as fn] (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8399:11) @ http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:3920
+[ 2503270ms] [WARNING] [Vue warn]: injection "mt-request" not found. 
+  at <Index done-json= [] onUpdate:doneJson=fn canvas-cfg= {width: 1920, height: 1080, scale: 1, color: , img: }  ... > 
+  at <Index ref_key="mainPanelRef" ref=Ref< undefined > group-enabled=false  ... > 
+  at <ElMain class="dark:bg-myMainDarkBgColor" onMousedown=fn > 
+  at <ElContainer class="h-[calc(100%-45px-40px)]" > 
+  at <ElContainer class="h-1/1" > 
+  at <Index ref="mtEditRef" > 
+  at <BlindBoardEditor onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< null > key="/blindplate-editor" > 
+  at <KeepAlive include= [/blindplates, /stocktakes, /blindplate-editor] > 
+  at <RouterView> 
+  at <ElMain class="layout-content" > 
+  at <AppLayout onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView> 
+  at <ElConfigProvider locale= {name: zh-cn, el: Object} > 
+  at <App> @ http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:2229
+[ 2503271ms] [WARNING] [Vue warn]: injection "mt-request" not found. 
+  at <Index done-json= [] canvas-cfg= {width: 1920, height: 1080, scale: 1, color: , img: } grid-cfg= {enabled: true, align: true, size: 10}  ... > 
+  at <Index ref_key="mainPanelRef" ref=Ref< undefined > group-enabled=false  ... > 
+  at <ElMain class="dark:bg-myMainDarkBgColor" onMousedown=fn > 
+  at <ElContainer class="h-[calc(100%-45px-40px)]" > 
+  at <ElContainer class="h-1/1" > 
+  at <Index ref="mtEditRef" > 
+  at <BlindBoardEditor onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< null > key="/blindplate-editor" > 
+  at <KeepAlive include= [/blindplates, /stocktakes, /blindplate-editor] > 
+  at <RouterView> 
+  at <ElMain class="layout-content" > 
+  at <AppLayout onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView> 
+  at <ElConfigProvider locale= {name: zh-cn, el: Object} > 
+  at <App> @ http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:2229
+[ 2531842ms] [WARNING] ElementPlusError: [ElOnlyChild] no valid child node found
+    at hs (http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:3920:23)
+    at Proxy.<anonymous> (http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:8087:61)
+    at renderComponentRoot (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:6814:17)
+    at ReactiveEffect.componentUpdateFn [as fn] (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8392:46)
+    at ReactiveEffect.run (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:532:19)
+    at setupRenderEffect (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8527:5)
+    at mountComponent (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8299:7)
+    at processComponent (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8251:9)
+    at patch (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:7743:11)
+    at ReactiveEffect.componentUpdateFn [as fn] (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8399:11) @ http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:3920
+[ 2531855ms] [WARNING] [Vue warn]: injection "mt-request" not found. 
+  at <Index done-json= [] onUpdate:doneJson=fn canvas-cfg= {width: 1920, height: 1080, scale: 1, color: , img: }  ... > 
+  at <Index ref_key="mainPanelRef" ref=Ref< undefined > group-enabled=false  ... > 
+  at <ElMain class="dark:bg-myMainDarkBgColor" onMousedown=fn > 
+  at <ElContainer class="h-[calc(100%-45px-40px)]" > 
+  at <ElContainer class="h-1/1" > 
+  at <Index ref="mtEditRef" > 
+  at <BlindBoardEditor onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< null > key="/blindplate-editor" > 
+  at <KeepAlive include= [/blindplates, /stocktakes, /blindplate-editor] > 
+  at <RouterView> 
+  at <ElMain class="layout-content" > 
+  at <AppLayout onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView> 
+  at <ElConfigProvider locale= {name: zh-cn, el: Object} > 
+  at <App> @ http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:2229
+[ 2531856ms] [WARNING] [Vue warn]: injection "mt-request" not found. 
+  at <Index done-json= [] canvas-cfg= {width: 1920, height: 1080, scale: 1, color: , img: } grid-cfg= {enabled: true, align: true, size: 10}  ... > 
+  at <Index ref_key="mainPanelRef" ref=Ref< undefined > group-enabled=false  ... > 
+  at <ElMain class="dark:bg-myMainDarkBgColor" onMousedown=fn > 
+  at <ElContainer class="h-[calc(100%-45px-40px)]" > 
+  at <ElContainer class="h-1/1" > 
+  at <Index ref="mtEditRef" > 
+  at <BlindBoardEditor onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< null > key="/blindplate-editor" > 
+  at <KeepAlive include= [/blindplates, /stocktakes, /blindplate-editor] > 
+  at <RouterView> 
+  at <ElMain class="layout-content" > 
+  at <AppLayout onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView> 
+  at <ElConfigProvider locale= {name: zh-cn, el: Object} > 
+  at <App> @ http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:2229
+[ 2537469ms] [WARNING] ElementPlusError: [ElOnlyChild] no valid child node found
+    at hs (http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:3920:23)
+    at Proxy.<anonymous> (http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:8087:61)
+    at renderComponentRoot (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:6814:17)
+    at ReactiveEffect.componentUpdateFn [as fn] (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8392:46)
+    at ReactiveEffect.run (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:532:19)
+    at setupRenderEffect (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8527:5)
+    at mountComponent (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8299:7)
+    at processComponent (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8251:9)
+    at patch (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:7743:11)
+    at ReactiveEffect.componentUpdateFn [as fn] (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8399:11) @ http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:3920
+[ 2537481ms] [WARNING] [Vue warn]: injection "mt-request" not found. 
+  at <Index done-json= [] onUpdate:doneJson=fn canvas-cfg= {width: 1920, height: 1080, scale: 1, color: , img: }  ... > 
+  at <Index ref_key="mainPanelRef" ref=Ref< undefined > group-enabled=false  ... > 
+  at <ElMain class="dark:bg-myMainDarkBgColor" onMousedown=fn > 
+  at <ElContainer class="h-[calc(100%-45px-40px)]" > 
+  at <ElContainer class="h-1/1" > 
+  at <Index ref="mtEditRef" > 
+  at <BlindBoardEditor onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< null > key="/blindplate-editor" > 
+  at <KeepAlive include= [/stocktakes, /blindplate-editor] > 
+  at <RouterView> 
+  at <ElMain class="layout-content" > 
+  at <AppLayout onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView> 
+  at <ElConfigProvider locale= {name: zh-cn, el: Object} > 
+  at <App> @ http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:2229
+[ 2537482ms] [WARNING] [Vue warn]: injection "mt-request" not found. 
+  at <Index done-json= [] canvas-cfg= {width: 1920, height: 1080, scale: 1, color: , img: } grid-cfg= {enabled: true, align: true, size: 10}  ... > 
+  at <Index ref_key="mainPanelRef" ref=Ref< undefined > group-enabled=false  ... > 
+  at <ElMain class="dark:bg-myMainDarkBgColor" onMousedown=fn > 
+  at <ElContainer class="h-[calc(100%-45px-40px)]" > 
+  at <ElContainer class="h-1/1" > 
+  at <Index ref="mtEditRef" > 
+  at <BlindBoardEditor onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< null > key="/blindplate-editor" > 
+  at <KeepAlive include= [/stocktakes, /blindplate-editor] > 
+  at <RouterView> 
+  at <ElMain class="layout-content" > 
+  at <AppLayout onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView> 
+  at <ElConfigProvider locale= {name: zh-cn, el: Object} > 
+  at <App> @ http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:2229
+[ 2601657ms] [WARNING] ElementPlusError: [ElOnlyChild] no valid child node found
+    at hs (http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:3920:23)
+    at Proxy.<anonymous> (http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:8087:61)
+    at renderComponentRoot (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:6814:17)
+    at ReactiveEffect.componentUpdateFn [as fn] (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8392:46)
+    at ReactiveEffect.run (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:532:19)
+    at setupRenderEffect (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8527:5)
+    at mountComponent (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8299:7)
+    at processComponent (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8251:9)
+    at patch (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:7743:11)
+    at ReactiveEffect.componentUpdateFn [as fn] (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8399:11) @ http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:3920
+[ 2601663ms] [WARNING] [Vue warn]: injection "mt-request" not found. 
+  at <Index done-json= [] onUpdate:doneJson=fn canvas-cfg= {width: 1920, height: 1080, scale: 1, color: , img: }  ... > 
+  at <Index ref_key="mainPanelRef" ref=Ref< undefined > group-enabled=false  ... > 
+  at <ElMain class="dark:bg-myMainDarkBgColor" onMousedown=fn > 
+  at <ElContainer class="h-[calc(100%-45px-40px)]" > 
+  at <ElContainer class="h-1/1" > 
+  at <Index ref="mtEditRef" > 
+  at <BlindBoardEditor onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< null > key="/blindplate-editor" > 
+  at <KeepAlive include= [/stocktakes, /blindplate-editor, /locations, /isolation-point-import, /change-approval, /blind-spot-status, /blindplates] > 
+  at <RouterView> 
+  at <ElMain class="layout-content" > 
+  at <AppLayout onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView> 
+  at <ElConfigProvider locale= {name: zh-cn, el: Object} > 
+  at <App> @ http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:2229
+[ 2601664ms] [WARNING] [Vue warn]: injection "mt-request" not found. 
+  at <Index done-json= [] canvas-cfg= {width: 1920, height: 1080, scale: 1, color: , img: } grid-cfg= {enabled: true, align: true, size: 10}  ... > 
+  at <Index ref_key="mainPanelRef" ref=Ref< undefined > group-enabled=false  ... > 
+  at <ElMain class="dark:bg-myMainDarkBgColor" onMousedown=fn > 
+  at <ElContainer class="h-[calc(100%-45px-40px)]" > 
+  at <ElContainer class="h-1/1" > 
+  at <Index ref="mtEditRef" > 
+  at <BlindBoardEditor onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< null > key="/blindplate-editor" > 
+  at <KeepAlive include= [/stocktakes, /blindplate-editor, /locations, /isolation-point-import, /change-approval, /blind-spot-status, /blindplates] > 
+  at <RouterView> 
+  at <ElMain class="layout-content" > 
+  at <AppLayout onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< Proxy(Object) > > 
+  at <RouterView> 
+  at <ElConfigProvider locale= {name: zh-cn, el: Object} > 
+  at <App> @ http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:2229
+[ 2630737ms] [WARNING] Invalid prop: type check failed for prop "modelValue". Expected Number | Null, got String with value "". Proxy(Object) at <ElInputNumber>
+at <ElFormItem>
+at <ElCol>
+at <ElRow>
+at <ElForm>
+at <ElDialogContent>
+at <ElFocusTrap>
+at <ElOverlay>
+at <BaseTransition>
+at <Transition>
+at <ElDialog>
+at <BlindPlateForm>
+at <BlindPlateList>
+at <KeepAlive>
+at <RouterView>
+at <ElMain>
+at <AppLayout>
+at <RouterView>
+at <ElConfigProvider>
+at <App> [Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object] @ http://localhost:3000/node_modules/.vite/deps/element-plus.js?v=9dd98474:25327
+[ 2630739ms] [WARNING] Invalid prop: type check failed for prop "modelValue". Expected Number | Null, got String with value "". Proxy(Object) at <ElInputNumber>
+at <ElFormItem>
+at <ElCol>
+at <ElRow>
+at <ElForm>
+at <ElDialogContent>
+at <ElFocusTrap>
+at <ElOverlay>
+at <BaseTransition>
+at <Transition>
+at <ElDialog>
+at <BlindPlateForm>
+at <BlindPlateList>
+at <KeepAlive>
+at <RouterView>
+at <ElMain>
+at <AppLayout>
+at <RouterView>
+at <ElConfigProvider>
+at <App> [Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object] @ http://localhost:3000/node_modules/.vite/deps/element-plus.js?v=9dd98474:25327
+[ 2630741ms] [WARNING] Invalid prop: type check failed for prop "modelValue". Expected Number | Null, got String with value "". Proxy(Object) at <ElInputNumber>
+at <ElFormItem>
+at <ElCol>
+at <ElRow>
+at <ElForm>
+at <ElDialogContent>
+at <ElFocusTrap>
+at <ElOverlay>
+at <BaseTransition>
+at <Transition>
+at <ElDialog>
+at <BlindPlateForm>
+at <BlindPlateList>
+at <KeepAlive>
+at <RouterView>
+at <ElMain>
+at <AppLayout>
+at <RouterView>
+at <ElConfigProvider>
+at <App> [Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object] @ http://localhost:3000/node_modules/.vite/deps/element-plus.js?v=9dd98474:25327
+[ 2631839ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/api/v1/scraps/by-plate/1:0
+[ 2631874ms] AxiosError: Request failed with status code 500
+    at settle (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1534:12)
+    at XMLHttpRequest.onloadend (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1997:7)
+    at Axios.request (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:2930:41)
+    at async Promise.all (index 2)
+    at async loadAll (http://localhost:3000/src/components/BlindPlateDetailDrawer.vue:41:35)
+[ 2631854ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/api/v1/scraps/by-plate/1:0
+[ 2631881ms] AxiosError: Request failed with status code 500
+    at settle (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1534:12)
+    at XMLHttpRequest.onloadend (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1997:7)
+    at Axios.request (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:2930:41)
+    at async Promise.all (index 2)
+    at async loadAll (http://localhost:3000/src/components/BlindPlateDetailDrawer.vue:41:35)
+[ 2643153ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/api/v1/scraps/by-plate/1:0
+[ 2643167ms] AxiosError: Request failed with status code 500
+    at settle (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1534:12)
+    at XMLHttpRequest.onloadend (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1997:7)
+    at Axios.request (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:2930:41)
+    at async Promise.all (index 2)
+    at async loadAll (http://localhost:3000/src/components/BlindPlateDetailDrawer.vue:41:35)
+[ 2649803ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/api/v1/scraps/by-plate/1:0
+[ 2649822ms] AxiosError: Request failed with status code 500
+    at settle (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1534:12)
+    at XMLHttpRequest.onloadend (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1997:7)
+    at Axios.request (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:2930:41)
+    at async Promise.all (index 2)
+    at async loadAll (http://localhost:3000/src/components/BlindPlateDetailDrawer.vue:41:35)
+[ 2657838ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/api/v1/scraps/by-plate/1:0
+[ 2657859ms] AxiosError: Request failed with status code 500
+    at settle (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1534:12)
+    at XMLHttpRequest.onloadend (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1997:7)
+    at Axios.request (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:2930:41)
+    at async Promise.all (index 2)
+    at async loadAll (http://localhost:3000/src/components/BlindPlateDetailDrawer.vue:41:35)
+[ 2863989ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/api/v1/scraps/by-plate/1:0
+[ 2864020ms] AxiosError: Request failed with status code 500
+    at settle (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1534:12)
+    at XMLHttpRequest.onloadend (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1997:7)
+    at Axios.request (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:2930:41)
+    at async Promise.all (index 2)
+    at async loadAll (http://localhost:3000/src/components/BlindPlateDetailDrawer.vue:41:35)
+[ 2864012ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/api/v1/scraps/by-plate/1:0
+[ 2864043ms] AxiosError: Request failed with status code 500
+    at settle (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1534:12)
+    at XMLHttpRequest.onloadend (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:1997:7)
+    at Axios.request (http://localhost:3000/node_modules/.vite/deps/axios.js?v=9dd98474:2930:41)
+    at async Promise.all (index 2)
+    at async loadAll (http://localhost:3000/src/components/BlindPlateDetailDrawer.vue:41:35)
+[ 2980323ms] [WARNING] Invalid prop: type check failed for prop "modelValue". Expected Number | Null, got String with value "". Proxy(Object) at <ElInputNumber>
+at <ElFormItem>
+at <ElCol>
+at <ElRow>
+at <ElForm>
+at <ElDialogContent>
+at <ElFocusTrap>
+at <ElOverlay>
+at <BaseTransition>
+at <Transition>
+at <ElDialog>
+at <BlindPlateForm>
+at <BlindPlateList>
+at <KeepAlive>
+at <RouterView>
+at <ElMain>
+at <AppLayout>
+at <RouterView>
+at <ElConfigProvider>
+at <App> [Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object] @ http://localhost:3000/node_modules/.vite/deps/element-plus.js?v=9dd98474:25327
+[ 2980325ms] [WARNING] Invalid prop: type check failed for prop "modelValue". Expected Number | Null, got String with value "". Proxy(Object) at <ElInputNumber>
+at <ElFormItem>
+at <ElCol>
+at <ElRow>
+at <ElForm>
+at <ElDialogContent>
+at <ElFocusTrap>
+at <ElOverlay>
+at <BaseTransition>
+at <Transition>
+at <ElDialog>
+at <BlindPlateForm>
+at <BlindPlateList>
+at <KeepAlive>
+at <RouterView>
+at <ElMain>
+at <AppLayout>
+at <RouterView>
+at <ElConfigProvider>
+at <App> [Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object] @ http://localhost:3000/node_modules/.vite/deps/element-plus.js?v=9dd98474:25327
+[ 2980326ms] [WARNING] Invalid prop: type check failed for prop "modelValue". Expected Number | Null, got String with value "". Proxy(Object) at <ElInputNumber>
+at <ElFormItem>
+at <ElCol>
+at <ElRow>
+at <ElForm>
+at <ElDialogContent>
+at <ElFocusTrap>
+at <ElOverlay>
+at <BaseTransition>
+at <Transition>
+at <ElDialog>
+at <BlindPlateForm>
+at <BlindPlateList>
+at <KeepAlive>
+at <RouterView>
+at <ElMain>
+at <AppLayout>
+at <RouterView>
+at <ElConfigProvider>
+at <App> [Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object] @ http://localhost:3000/node_modules/.vite/deps/element-plus.js?v=9dd98474:25327
+[ 3001480ms] [WARNING] Invalid prop: type check failed for prop "modelValue". Expected Number | Null, got String with value "". Proxy(Object) at <ElInputNumber>
+at <ElFormItem>
+at <ElCol>
+at <ElRow>
+at <ElForm>
+at <ElDialogContent>
+at <ElFocusTrap>
+at <ElOverlay>
+at <BaseTransition>
+at <Transition>
+at <ElDialog>
+at <BlindPlateForm>
+at <BlindPlateList>
+at <KeepAlive>
+at <RouterView>
+at <ElMain>
+at <AppLayout>
+at <RouterView>
+at <ElConfigProvider>
+at <App> [Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object] @ http://localhost:3000/node_modules/.vite/deps/element-plus.js?v=9dd98474:25327
+[ 3001482ms] [WARNING] Invalid prop: type check failed for prop "modelValue". Expected Number | Null, got String with value "". Proxy(Object) at <ElInputNumber>
+at <ElFormItem>
+at <ElCol>
+at <ElRow>
+at <ElForm>
+at <ElDialogContent>
+at <ElFocusTrap>
+at <ElOverlay>
+at <BaseTransition>
+at <Transition>
+at <ElDialog>
+at <BlindPlateForm>
+at <BlindPlateList>
+at <KeepAlive>
+at <RouterView>
+at <ElMain>
+at <AppLayout>
+at <RouterView>
+at <ElConfigProvider>
+at <App> [Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object] @ http://localhost:3000/node_modules/.vite/deps/element-plus.js?v=9dd98474:25327
+[ 3001483ms] [WARNING] Invalid prop: type check failed for prop "modelValue". Expected Number | Null, got String with value "". Proxy(Object) at <ElInputNumber>
+at <ElFormItem>
+at <ElCol>
+at <ElRow>
+at <ElForm>
+at <ElDialogContent>
+at <ElFocusTrap>
+at <ElOverlay>
+at <BaseTransition>
+at <Transition>
+at <ElDialog>
+at <BlindPlateForm>
+at <BlindPlateList>
+at <KeepAlive>
+at <RouterView>
+at <ElMain>
+at <AppLayout>
+at <RouterView>
+at <ElConfigProvider>
+at <App> [Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object] @ http://localhost:3000/node_modules/.vite/deps/element-plus.js?v=9dd98474:25327
+[ 4222004ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:3000/@vite/client:559

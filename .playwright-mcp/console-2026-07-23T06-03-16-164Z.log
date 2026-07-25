@@ -1,0 +1,41 @@
+[     394ms] [WARNING] ElementPlusError: [ElOnlyChild] no valid child node found
+    at hs (http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:3920:23)
+    at Proxy.<anonymous> (http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:8087:61)
+    at renderComponentRoot (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:6814:17)
+    at ReactiveEffect.componentUpdateFn [as fn] (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8392:46)
+    at ReactiveEffect.run (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:532:19)
+    at setupRenderEffect (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8527:5)
+    at mountComponent (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8299:7)
+    at processComponent (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8251:9)
+    at patch (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:7743:11)
+    at ReactiveEffect.componentUpdateFn [as fn] (http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:8399:11) @ http://localhost:3000/node_modules/.vite/deps/maotu.js?v=9dd98474:3920
+[     416ms] [WARNING] [Vue warn]: injection "mt-request" not found. 
+  at <Index done-json= [] onUpdate:doneJson=fn canvas-cfg= {width: 1920, height: 1080, scale: 1, color: , img: }  ... > 
+  at <Index ref_key="mainPanelRef" ref=Ref< undefined > group-enabled=false  ... > 
+  at <ElMain class="dark:bg-myMainDarkBgColor" onMousedown=fn > 
+  at <ElContainer class="h-[calc(100%-45px-40px)]" > 
+  at <ElContainer class="h-1/1" > 
+  at <Index ref="mtEditRef" > 
+  at <BlindBoardEditor onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< undefined > key="/blindplate-editor" > 
+  at <KeepAlive include= [] > 
+  at <RouterView> 
+  at <ElMain class="layout-content" > 
+  at <AppLayout onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< undefined > > 
+  at <RouterView> 
+  at <ElConfigProvider locale= {name: zh-cn, el: Object} > 
+  at <App> @ http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:2229
+[     417ms] [WARNING] [Vue warn]: injection "mt-request" not found. 
+  at <Index done-json= [] canvas-cfg= {width: 1920, height: 1080, scale: 1, color: , img: } grid-cfg= {enabled: true, align: true, size: 10}  ... > 
+  at <Index ref_key="mainPanelRef" ref=Ref< undefined > group-enabled=false  ... > 
+  at <ElMain class="dark:bg-myMainDarkBgColor" onMousedown=fn > 
+  at <ElContainer class="h-[calc(100%-45px-40px)]" > 
+  at <ElContainer class="h-1/1" > 
+  at <Index ref="mtEditRef" > 
+  at <BlindBoardEditor onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< undefined > key="/blindplate-editor" > 
+  at <KeepAlive include= [] > 
+  at <RouterView> 
+  at <ElMain class="layout-content" > 
+  at <AppLayout onVnodeUnmounted=fn<onVnodeUnmounted> ref=Ref< undefined > > 
+  at <RouterView> 
+  at <ElConfigProvider locale= {name: zh-cn, el: Object} > 
+  at <App> @ http://localhost:3000/node_modules/.vite/deps/chunk-BX3OJJK3.js?v=9dd98474:2229

@@ -80,7 +80,7 @@ import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Search, Plus, Edit, Delete } from '@element-plus/icons-vue'
-import axios from 'axios'
+import request from '@/api/request'
 import InspectionForm from '@/components/InspectionForm.vue'
 
 const { t } = useI18n()
@@ -125,8 +125,8 @@ function getStatusType(status: string) {
 async function fetchData() {
   loading.value = true
   try {
-    const res: any = await axios.get('/api/v1/inspections')
-    plans.value = res.data.data
+    const res: any = await request.get('/inspections')
+    plans.value = res.data
   } finally {
     loading.value = false
   }
@@ -150,7 +150,7 @@ async function handleFormSubmit(_data: any) {
 
 async function handleDelete(id: number) {
   await ElMessageBox.confirm(t('confirm.deleteInspection'), t('confirm.deleteTitle'), { type: 'warning' })
-  await axios.delete(`/api/v1/inspections/${id}`)
+  await request.delete(`/inspections/${id}`)
   ElMessage.success(t('message.deleted'))
   fetchData()
 }

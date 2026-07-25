@@ -82,7 +82,7 @@ import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Search, Plus, Edit, Delete } from '@element-plus/icons-vue'
-import axios from 'axios'
+import request from '@/api/request'
 import type { OperationOrder } from '@/types'
 import OperationForm from '@/components/OperationForm.vue'
 
@@ -133,8 +133,8 @@ function formatStatus(status: string) {
 async function fetchData() {
   loading.value = true
   try {
-    const res: any = await axios.get('/api/v1/operations')
-    orders.value = res.data.data
+    const res: any = await request.get('/operations')
+    orders.value = res.data
   } finally {
     loading.value = false
   }
@@ -158,7 +158,7 @@ async function handleFormSubmit(_data: any) {
 
 async function handleDelete(id: number) {
   await ElMessageBox.confirm(t('confirm.deleteOrder'), t('confirm.deleteTitle'), { type: 'warning' })
-  await axios.delete(`/api/v1/operations/${id}`)
+  await request.delete(`/operations/${id}`)
   ElMessage.success(t('message.deleted'))
   fetchData()
 }

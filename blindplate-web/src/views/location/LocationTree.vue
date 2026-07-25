@@ -82,7 +82,7 @@
 <script setup lang="ts">
 import { ref, watch, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-import axios from 'axios'
+import request from '@/api/request'
 import { ElMessage } from 'element-plus'
 import { Plus, Search, Edit } from '@element-plus/icons-vue'
 import type { Location } from '@/types'
@@ -102,8 +102,8 @@ const editData = ref<Location | null>(null)
 async function fetchData() {
   loading.value = true
   try {
-    const res: any = await axios.get('/api/v1/locations/tree')
-    treeData.value = res.data.data
+    const res: any = await request.get('/locations/tree')
+    treeData.value = res.data
   } finally {
     loading.value = false
   }
